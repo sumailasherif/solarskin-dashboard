@@ -4,24 +4,17 @@
     "open": "Open menu",
     "close": "Close menu",
     "story": "Story",
-    "live": "Live",
     "impact": "Impact",
     "sdgs": "SDGs",
-    "measure": "Measure",
-    "method": "Method",
     "desc": {
       "story": "Why sunny walls matter",
-      "live": "Today's power and temperatures",
       "impact": "The pilot in numbers",
       "sdgs": "The UN goals we work towards",
-      "measure": "Energy, CO₂ and wall cooling",
-      "method": "How every number is counted",
       "faq": "Answers to common questions"
     },
-    "pilot": "Pilot site",
-    "pilotPlace": "Fergana, Uzbekistan",
-    "pilotWall": "South wall · ~10 kWp",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "label": "Main",
+    "cta": "See the live wall"
   },
   "hero": {
     "eyebrow": "Façade solar pilot · Fergana, Uzbekistan",
