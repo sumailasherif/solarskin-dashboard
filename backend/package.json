@@ -1,0 +1,13 @@
+{
+  "name": "@solarskin/backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SolarSkin REST API: ingest sensor data, compute impact, serve the dashboard",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "header": {
+    "title": "SolarSkin Dashboard",
+    "subtitle": "Façade solar pilot · Fergana, Uzbekistan"
+  },
+  "kpi": {
+    "energy": { "label": "Energy generated", "unit": "kWh" },
+    "co2": { "label": "CO₂ avoided", "unit": "kg CO₂", "note": "at 0.55 t/MWh grid factor" },
+    "cooling": { "label": "Wall cooling", "unit": "°C", "note": "cooler than the reference wall" },
+    "irradiance": { "label": "Peak irradiance", "unit": "W/m²" }
+  },
+  "charts": {
+    "title": "Charts",
+    "placeholder": "Charts arrive in Milestone 8, once real (or simulated) data is flowing."
+  },
+  "noData": "No data yet",
+  "footer": "SolarSkin · Global Sustainability Challenge 2026–27 · Dashboard by Sherif Sumaila"
+}

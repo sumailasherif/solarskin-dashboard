@@ -1,0 +1,25 @@
+# Local development database.
+# Start it with:   docker compose up -d
+# Stop it with:    docker compose down        (your data is kept in the "db-data" volume)
+# Wipe all data:   docker compose down -v
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      # Values come from your .env file (with safe defaults if missing)
+      POSTGRES_USER: ${POSTGRES_USER:-solarskin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
+      POSTGRES_DB: ${POSTGRES_DB:-solarskin}
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-solarskin}']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  db-data:

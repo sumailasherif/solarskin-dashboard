@@ -1,0 +1,26 @@
+{
+  "name": "solarskin-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monitoring and impact dashboard for SolarSkin retrofit façade solar modules",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend",
+    "simulator"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,yellow \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  }
+}

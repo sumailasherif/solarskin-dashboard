@@ -1,0 +1,16 @@
+/* Tailwind gives us small utility classes (e.g. "p-4", "rounded-2xl").
+   The @theme block adds OUR brand colours so we can write "bg-navy" or "text-solar". */
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #0b2e4f;
+  --color-navy-700: #123d66;
+  --color-navy-50: #eef3f8;
+  --color-solar: #f5b82e;
+  --color-solar-100: #fdf1d3;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  @apply bg-navy-50 font-sans text-navy antialiased;
+}

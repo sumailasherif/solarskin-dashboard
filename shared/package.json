@@ -1,0 +1,12 @@
+{
+  "name": "@solarskin/shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Code shared by backend, frontend and simulator (reading schema, types, constants)",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}
