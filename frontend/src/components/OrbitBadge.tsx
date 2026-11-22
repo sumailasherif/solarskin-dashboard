@@ -9,8 +9,12 @@ export function OrbitBadge({ text, href, label }: OrbitBadgeProps) {
         <defs>
           <path id="orbit-path" d="M50,50 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0" />
         </defs>
-        <text className="fill-white text-[7.4px] font-semibold tracking-[0.18em] uppercase">
-          <textPath href="#orbit-path">{text.repeat(2)}</textPath>
+        {/* The text goes round ONCE and is spread to fill the whole circle exactly
+            (circumference = 2 × π × 42 ≈ 263.9), so any sentence length fits without overlapping. */}
+        <text className="fill-white text-[7.4px] font-semibold uppercase">
+          <textPath href="#orbit-path" textLength="263" lengthAdjust="spacing">
+            {text}
+          </textPath>
         </text>
       </svg>
 
