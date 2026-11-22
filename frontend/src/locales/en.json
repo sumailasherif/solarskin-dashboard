@@ -3,18 +3,20 @@
   "nav": {
     "open": "Open menu",
     "close": "Close menu",
-    "story": "Story",
-    "impact": "Impact",
-    "sdgs": "SDGs",
-    "desc": {
-      "story": "Why sunny walls matter",
-      "impact": "The pilot in numbers",
-      "sdgs": "The UN goals we work towards",
-      "faq": "Answers to common questions"
-    },
-    "faq": "FAQ",
     "label": "Main",
-    "cta": "See the live wall"
+    "cta": "See the live wall",
+    "story": "Project",
+    "measure": "Readings",
+    "impact": "Impact",
+    "method": "Method",
+    "faq": "FAQ",
+    "desc": {
+      "story": "What SolarSkin is and why walls",
+      "measure": "Energy, CO₂, wall cooling and sunlight",
+      "impact": "Pilot figures and the UN goals",
+      "method": "How the sensors measure",
+      "faq": "Answers to common questions"
+    }
   },
   "hero": {
     "eyebrow": "Façade solar pilot · Fergana, Uzbekistan",

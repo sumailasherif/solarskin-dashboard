@@ -1,4 +1,4 @@
-// Top bar: logo on the left, 4 section links in the middle, a "See the live wall" button on the right.
+// Top bar: logo on the left, 5 section links in the middle, a "See the live wall" button on the right.
 // On phones the links don't fit in one row, so the round yellow button opens a small
 // dropdown with the same links instead.
 // The links use Fraunces Italic and a "solar panel switching on" hover: a coloured panel
@@ -8,7 +8,11 @@ import { useTranslation } from 'react-i18next';
 import { LogoMark } from './LogoMark';
 
 // The page sections the bar links to ("Live" is reached with the "See the live wall" button). The ids match <section id="..."> in the page.
-const LINKS = ['story', 'impact', 'sdgs', 'faq'] as const;
+const LINKS = ['story', 'measure', 'impact', 'method', 'faq'] as const;
+
+// Sections without their own link that should light up another link's dot:
+// the SDGs part follows the pilot figures, so it counts as "Impact".
+const ALIAS: Record<string, string> = { sdgs: 'impact' };
 
 /** The id of the section in the middle of the screen right now (null at the very top). */
 function useActiveSection() {
@@ -19,7 +23,8 @@ function useActiveSection() {
     // Watch a thin line across the middle of the screen: whichever section crosses it is "active".
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) if (entry.isIntersecting) setActive(entry.target.id);
+        for (const entry of entries)
+          if (entry.isIntersecting) setActive(ALIAS[entry.target.id] ?? entry.target.id);
       },
       { rootMargin: '-45% 0px -50% 0px' },
     );
