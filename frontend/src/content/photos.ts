@@ -1,8 +1,8 @@
 // Real photos used on the dashboard. All come from Unsplash and are free to use under the
-// Unsplash License (https://unsplash.com/license), which does not require a credit.
-// No credits are shown on the page (Sherif's choice); photographer + page are kept
-// here for reference. Images load straight from Unsplash's image servers, resized
-// to the size we ask for.
+// Unsplash License (https://unsplash.com/license). A credit is not required, but each photo
+// has a small "Photo credit" link (components/PhotoCredit.tsx) that shows the
+// photographer and licence on hover. Names were checked against each photo page on 2026-11-22.
+// Images load straight from Unsplash's image servers, resized to the size we ask for.
 
 export type Photo = {
   /** Unsplash image id, e.g. "photo-1659469687849-17b452dfceb0" */
@@ -10,7 +10,7 @@ export type Photo = {
   /** Text for screen readers / if the image fails to load */
   alt: string;
   photographer: string;
-  /** The photo's page on Unsplash (for reference) */
+  /** The photo's page on Unsplash (the photo credit links here) */
   page: string;
 };
 

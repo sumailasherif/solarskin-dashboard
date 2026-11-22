@@ -13,6 +13,7 @@ import { KpiCard } from './components/KpiCard';
 import { LiveSection } from './components/LiveSection';
 import { Marquee } from './components/Marquee';
 import { OrbitBadge } from './components/OrbitBadge';
+import { PhotoCredit } from './components/PhotoCredit';
 import { PhotoStrip } from './components/PhotoStrip';
 import { Reveal } from './components/Reveal';
 import { SiteHeader } from './components/SiteHeader';
@@ -112,6 +113,7 @@ export default function App() {
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-forest-950 via-forest-950/80 to-forest-950" />
+          <PhotoCredit photo={PHOTOS.panelCloseUp} />
 
           <div className="relative mx-auto max-w-7xl">
             <Reveal>
@@ -195,6 +197,7 @@ export default function App() {
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-forest/95 via-forest/90 to-forest-950/80" />
+          <PhotoCredit photo={PHOTOS.uzLandscape} />
 
           <div className="relative mx-auto max-w-7xl">
             <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -215,6 +218,7 @@ export default function App() {
                     decoding="async"
                     className="aspect-[16/10] w-full object-cover"
                   />
+                  <PhotoCredit photo={PHOTOS.sensorKit} corner="top" />
                   <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950/90 to-transparent p-5 pt-12 text-sm text-white/85">
                     {t('method.photoCaption')}
                   </figcaption>
@@ -237,7 +241,7 @@ export default function App() {
       </main>
 
       <footer className="bg-forest-950 px-4 py-10 text-center text-xs text-white/50 sm:px-8">
-        {t('footer')}
+        <p>{t('footer')}</p>
       </footer>
     </div>
   );

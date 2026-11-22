@@ -3,6 +3,7 @@
 // target and the dashboard number we use to track it, so the claim can be checked.
 import { useTranslation } from 'react-i18next';
 import { PHOTOS, photoSrcSet, photoUrl } from '../content/photos';
+import { PhotoCredit } from './PhotoCredit';
 import { Reveal } from './Reveal';
 
 const PILLARS = ['planet', 'people', 'economy'] as const;
@@ -104,6 +105,7 @@ export function SustainabilitySection() {
                     decoding="async"
                     className="h-full w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105"
                   />
+                  <PhotoCredit photo={PILLAR_PHOTOS[key]} />
                 </div>
                 <div className="relative px-7 pb-7">
                   <span className="-mt-7 grid h-14 w-14 place-items-center rounded-2xl bg-leaf text-forest-950 shadow-md ring-4 ring-white">

@@ -36,9 +36,12 @@ export function CountUp({ value, className = '', durationMs = 1600 }: CountUpPro
           maximumFractionDigits: decimals,
         });
 
+  // Until the number scrolls into view we show the REAL value (never a placeholder "0"),
+  // so screenshots, printing and slow devices always see the correct figure.
+  // The count-up from 0 only runs once the number is on screen.
   return (
     <span ref={ref} className={className} aria-label={value}>
-      {inView ? text : value.replace(/\d/g, '0')}
+      {text}
     </span>
   );
 }

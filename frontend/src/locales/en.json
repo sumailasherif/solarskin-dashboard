@@ -27,7 +27,7 @@
     "line2": "on the record.",
     "lead": "Solar modules on the walls of apartment blocks. Every watt they make and every degree they keep off the wall, measured.",
     "cta": "See the live wall",
-    "orbit": "Live from Fergana · Every five minutes · "
+    "orbit": "Fergana pilot · One reading every minute · "
   },
   "story": {
     "kicker": "Why walls?",
@@ -42,7 +42,7 @@
       "city": {
         "place": "Fergana, Uzbekistan",
         "title": "The pilot city",
-        "text": "Fergana sits in a sunny valley in eastern Uzbekistan. The first SolarSkin wall is being measured here."
+        "text": "Fergana sits in a sunny valley in eastern Uzbekistan. The first SolarSkin wall will be measured here."
       },
       "idea": {
         "place": "Example façade",
@@ -93,7 +93,7 @@
     "scale": {
       "value": "8",
       "unit": "GWh/yr",
-      "text": "if 1,000 blocks got the same retrofit"
+      "text": "projected for 1,000 blocks (1,000 × 8,000 kWh per year)"
     }
   },
   "sustainability": {
@@ -194,7 +194,7 @@
     "items": [
       {
         "h": "Measured, not modelled",
-        "p": "A low-cost sensor kit reads power, sunlight and wall temperatures every 1–5 minutes. Nothing switches or controls the building."
+        "p": "A low-cost sensor kit reads power, sunlight and wall temperatures every minute. Nothing switches or controls the building."
       },
       {
         "h": "Two walls, one comparison",
@@ -215,8 +215,25 @@
     "Fergana pilot 2026"
   ],
   "noData": "No data yet",
-  "footer": "SolarSkin · Global Sustainability Challenge 2026–27 · Dashboard by Sherif Sumaila",
+  "footer": "SolarSkin © 2026",
   "gallery": {
     "label": "Photos of buildings, solar panels and Uzbekistan"
+  },
+  "credits": {
+    "button": "Photo credit",
+    "photoBy": "Photo by",
+    "source": "Source: Unsplash ·",
+    "licence": "Unsplash License",
+    "subjects": {
+      "tashkentBlocks": "Apartment blocks, Tashkent",
+      "solarFacade": "Example solar façade",
+      "ferganaStreet": "Street in Fergana",
+      "tashkentBalcony": "Balcony, Tashkent",
+      "uzLandscape": "Bostanlik District, Uzbekistan",
+      "panelCloseUp": "Solar panel close-up",
+      "solarField": "Solar field",
+      "installer": "Panel installation",
+      "sensorKit": "Electronic components"
+    }
   }
 }

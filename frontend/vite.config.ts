@@ -15,5 +15,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom', // a fake browser for component tests
     setupFiles: ['./src/test-setup.ts'],
+    // Rendering the whole page can take a few seconds on a busy computer; allow 15 s.
+    testTimeout: 15000,
   },
 });

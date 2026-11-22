@@ -2,6 +2,7 @@
 // the apartment blocks, the pilot city, and what a solar façade looks like.
 import { useTranslation } from 'react-i18next';
 import { PHOTOS, photoSrcSet, photoUrl, type Photo } from '../content/photos';
+import { PhotoCredit } from './PhotoCredit';
 import { Reveal } from './Reveal';
 
 const CARDS: { key: 'walls' | 'city' | 'idea'; photo: Photo; layout: string }[] = [
@@ -45,6 +46,8 @@ export function StorySection() {
                 />
                 {/* Dark fade at the bottom so the caption is readable */}
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-950/95 via-forest-950/30 to-transparent" />
+
+                <PhotoCredit photo={photo} corner="top" />
 
                 <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
                   <span className="inline-flex items-center gap-2 rounded-full bg-solar px-3 py-1 text-[11px] font-semibold text-forest-950">

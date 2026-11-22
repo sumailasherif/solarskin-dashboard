@@ -2,6 +2,7 @@
 // Like the yellow ticker, the row is drawn twice so the loop is seamless.
 import { useTranslation } from 'react-i18next';
 import { PHOTOS, photoUrl, type Photo } from '../content/photos';
+import { PhotoCredit } from './PhotoCredit';
 
 // Order chosen so similar photos are not next to each other.
 const STRIP: Photo[] = [
@@ -35,6 +36,7 @@ export function PhotoStrip() {
             decoding="async"
             className="h-full w-full object-cover transition duration-700 hover:scale-105"
           />
+          <PhotoCredit photo={photo} focusable={!hidden} />
         </li>
       ))}
     </ul>
