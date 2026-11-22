@@ -1,6 +1,6 @@
 // The whole dashboard page, top to bottom:
-//   header + menu → hero → ticker → story (photos) → live → impact numbers →
-//   sustainability + SDGs → KPI cards → method → FAQ → footer.
+//   header + nav → hero → ticker → story (photos) → live → readings (KPI cards) →
+//   impact numbers → photo strip → sustainability + SDGs → method → FAQ → footer.
 // SolarSkin's own look: forest greens (sustainability) + solar yellow (energy),
 // Unbounded + Sora fonts, an animated solar-façade skyline, leaf-shaped cards,
 // outlined count-up numbers and sections that rise into view as you scroll.
@@ -50,10 +50,11 @@ export default function App() {
         <section className="relative flex min-h-svh items-center overflow-hidden px-4 pt-28 pb-16 sm:px-8">
           <HeroScene className="absolute inset-0 h-full w-full" />
 
-          {/* Darker on the left so the text is easy to read over the drawing */}
+          {/* Darker on the left so the text is easy to read over the drawing
+              (stronger on phones/tablets, where the building sits behind the text) */}
           <div
             aria-hidden
-            className="absolute inset-0 bg-forest-950/55 lg:bg-transparent lg:bg-gradient-to-r lg:from-forest-950/95 lg:via-forest-950/60 lg:to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-950/70 to-forest-950/35 lg:from-forest-950/95 lg:via-forest-950/60 lg:to-transparent"
           />
 
           <div className="relative z-10 mx-auto w-full max-w-7xl">
@@ -78,7 +79,18 @@ export default function App() {
                 className="mt-8 inline-flex animate-rise items-center gap-3 rounded-full bg-solar px-6 py-3.5 text-sm font-semibold text-forest-950 transition-all [animation-delay:540ms] hover:gap-5 hover:bg-solar-300"
               >
                 {t('hero.cta')}
-                <span aria-hidden>↓</span>
+                <svg
+                  viewBox="0 0 16 16"
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M8 3v10M3.5 8.5 8 13l4.5-4.5" />
+                </svg>
               </a>
             </div>
           </div>
@@ -98,7 +110,37 @@ export default function App() {
         {/* 2. LIVE: clock, sun path, range chips, chart */}
         <LiveSection />
 
-        {/* 3. IMPACT: giant gradient numbers from the plan that count up, each labelled as an estimate */}
+        {/* 3. READINGS: solid yellow section with the four sensor KPI cards (right after the live chart) */}
+        <section id="measure" className="bg-solar px-4 py-24 text-forest-950 sm:px-8 sm:py-32">
+          <div className="mx-auto max-w-7xl">
+            <Reveal>
+              <h2 className="text-center font-display text-[clamp(2.2rem,7.5vw,6rem)] leading-[1.02] font-bold uppercase">
+                {t('measure.title1')} {t('measure.title2')}
+                <br />
+                {t('measure.title3')}
+              </h2>
+              <p className="mx-auto mt-6 max-w-md text-center text-base">{t('measure.lead')}</p>
+            </Reveal>
+
+            {/* 1 column on phones, 2 on tablets, 4 on desktops */}
+            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {KPIS.map(({ key, note }, i) => (
+                <Reveal key={key} delayMs={i * 120}>
+                  <KpiCard
+                    index={`0${i + 1}`}
+                    label={t(`kpi.${key}.label`)}
+                    value={null}
+                    unit={t(`kpi.${key}.unit`)}
+                    note={note ? t(`kpi.${key}.note`) : undefined}
+                    noDataText={noData}
+                  />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 4. IMPACT: giant gradient numbers from the plan that count up, each labelled as an estimate */}
         <section
           id="impact"
           className="relative overflow-hidden bg-forest-950 px-4 py-24 sm:px-8 sm:py-32"
@@ -151,36 +193,6 @@ export default function App() {
 
         {/* SUSTAINABILITY: the three pillars + the UN Sustainable Development Goals we support */}
         <SustainabilitySection />
-
-        {/* 4. MEASURE: solid yellow section with the four KPI cards */}
-        <section id="measure" className="bg-solar px-4 py-24 text-forest-950 sm:px-8 sm:py-32">
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <h2 className="text-center font-display text-[clamp(2.2rem,7.5vw,6rem)] leading-[1.02] font-bold uppercase">
-                {t('measure.title1')} {t('measure.title2')}
-                <br />
-                {t('measure.title3')}
-              </h2>
-              <p className="mx-auto mt-6 max-w-md text-center text-base">{t('measure.lead')}</p>
-            </Reveal>
-
-            {/* 1 column on phones, 2 on tablets, 4 on desktops */}
-            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {KPIS.map(({ key, note }, i) => (
-                <Reveal key={key} delayMs={i * 120}>
-                  <KpiCard
-                    index={`0${i + 1}`}
-                    label={t(`kpi.${key}.label`)}
-                    value={null}
-                    unit={t(`kpi.${key}.unit`)}
-                    note={note ? t(`kpi.${key}.note`) : undefined}
-                    noDataText={noData}
-                  />
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* 5. METHOD: how the numbers are made */}
         <section

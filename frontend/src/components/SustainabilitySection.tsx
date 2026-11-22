@@ -95,7 +95,7 @@ export function SustainabilitySection() {
             <Reveal key={key} delayMs={i * 120}>
               <article className="group h-full overflow-hidden rounded-tl-[2.5rem] rounded-tr-lg rounded-br-[2.5rem] rounded-bl-lg bg-white shadow-sm ring-1 ring-forest-950/5 transition hover:-translate-y-1 hover:shadow-lg">
                 {/* Photo, with the pillar icon sitting on its bottom edge */}
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-44 overflow-hidden lg:h-52">
                   <img
                     src={photoUrl(PILLAR_PHOTOS[key], 1080)}
                     srcSet={photoSrcSet(PILLAR_PHOTOS[key])}
@@ -107,7 +107,7 @@ export function SustainabilitySection() {
                   />
                   <PhotoCredit photo={PILLAR_PHOTOS[key]} />
                 </div>
-                <div className="relative px-7 pb-7">
+                <div className="relative px-5 pb-6 lg:px-7 lg:pb-7">
                   <span className="-mt-7 grid h-14 w-14 place-items-center rounded-2xl bg-leaf text-forest-950 shadow-md ring-4 ring-white">
                     <PillarIcon kind={key} />
                   </span>

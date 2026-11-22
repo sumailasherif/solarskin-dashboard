@@ -15,7 +15,7 @@ type KpiCardProps = {
 
 export function KpiCard({ index, label, value, unit, note, noDataText }: KpiCardProps) {
   return (
-    <article className="group flex min-h-56 flex-col justify-between rounded-tl-[2.75rem] rounded-tr-lg rounded-br-[2.75rem] rounded-bl-lg bg-forest-950 p-6 text-white transition hover:-translate-y-1">
+    <article className="group flex min-h-40 flex-col sm:min-h-56 justify-between rounded-tl-[2.75rem] rounded-tr-lg rounded-br-[2.75rem] rounded-bl-lg bg-forest-950 p-6 text-white transition hover:-translate-y-1">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-sm font-semibold">{label}</h3>
         <span className="rounded-full bg-leaf/15 px-2 py-0.5 text-xs text-leaf-300 tabular-nums">

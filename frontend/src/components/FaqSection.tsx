@@ -153,7 +153,7 @@ export function FaqSection() {
                 alt={photo.alt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/5] w-full object-cover object-[40%_center]"
+                className="aspect-[4/5] w-full object-cover object-[40%_center] md:aspect-[4/3] lg:aspect-[4/5]"
               />
               <PhonePopups />
               <PhotoCredit photo={photo} corner="top" />

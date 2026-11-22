@@ -7,7 +7,11 @@ import { Reveal } from './Reveal';
 
 const CARDS: { key: 'walls' | 'city' | 'idea'; photo: Photo; layout: string }[] = [
   // Tall card on the left (spans two rows on desktop)
-  { key: 'walls', photo: PHOTOS.tashkentBlocks, layout: 'lg:row-span-2 min-h-[28rem] lg:min-h-0' },
+  {
+    key: 'walls',
+    photo: PHOTOS.tashkentBlocks,
+    layout: 'md:col-span-2 lg:col-span-1 lg:row-span-2 min-h-[28rem] lg:min-h-0',
+  },
   { key: 'city', photo: PHOTOS.ferganaStreet, layout: 'min-h-[22rem]' },
   { key: 'idea', photo: PHOTOS.solarFacade, layout: 'min-h-[22rem]' },
 ];
@@ -30,8 +34,9 @@ export function StorySection() {
           </p>
         </Reveal>
 
-        {/* Photo grid: 1 column on phones, a big tall photo + two stacked on desktop */}
-        <div className="mt-14 grid gap-4 lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[22rem_22rem]">
+        {/* Photo grid: 1 column on phones; on tablets a wide photo + two side by side;
+            on laptops a big tall photo + two stacked */}
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-[1.1fr_1fr] lg:grid-rows-[22rem_22rem]">
           {CARDS.map(({ key, photo, layout }, i) => (
             <Reveal key={key} delayMs={i * 120} className={`h-full ${layout}`}>
               <figure className="group relative h-full min-h-[inherit] overflow-hidden rounded-tl-[3rem] rounded-tr-xl rounded-br-[3rem] rounded-bl-xl">
