@@ -9,6 +9,14 @@
     "sdgs": "SDGs",
     "measure": "Measure",
     "method": "Method",
+    "desc": {
+      "story": "Why sunny walls matter",
+      "live": "Today's power and temperatures",
+      "impact": "The pilot in numbers",
+      "sdgs": "The UN goals we work towards",
+      "measure": "Energy, CO₂ and wall cooling",
+      "method": "How every number is counted"
+    },
     "pilot": "Pilot site",
     "pilotPlace": "Fergana, Uzbekistan",
     "pilotWall": "South wall · ~10 kWp"

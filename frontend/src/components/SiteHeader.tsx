@@ -87,30 +87,68 @@ export function SiteHeader() {
       <nav
         id="site-menu"
         hidden={!open}
-        className="fixed inset-0 z-40 overflow-y-auto bg-solar text-forest-950"
+        className="fixed inset-0 z-40 overflow-x-hidden overflow-y-auto bg-solar text-forest-950"
       >
-        <div className="mx-auto flex min-h-full max-w-7xl flex-col justify-end gap-12 px-4 pt-28 pb-10 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
-          <ol>
+        {/* Our logo's panel-sun, huge and very faint, as a watermark in the corner */}
+        <LogoMark className="pointer-events-none absolute -right-24 -bottom-20 h-[26rem] w-[29rem] text-forest-950/[0.07]" />
+
+        <div className="relative mx-auto grid min-h-full max-w-6xl content-end gap-10 px-4 pt-28 pb-10 sm:px-8 lg:grid-cols-[1fr_17rem] lg:items-end">
+          {/* Links: 1 column on phones, 2 on wider screens. Each one rises in, one after another. */}
+          <ol className="grid gap-x-8 sm:grid-cols-2">
             {LINKS.map((id, i) => (
-              <li key={id} className="border-b border-forest-950/15">
+              <li
+                key={id}
+                className="animate-rise border-t border-forest-950/20"
+                style={{ animationDelay: `${i * 60}ms` }}
+              >
                 <a
                   href={`#${id}`}
                   onClick={() => setOpen(false)}
-                  className="group flex items-baseline gap-4 py-2 font-display text-[clamp(2rem,7vw,5rem)] leading-none uppercase transition hover:translate-x-3"
+                  className="group relative flex items-center gap-4 overflow-hidden px-3 py-4 outline-none"
                 >
-                  <span className="font-sans text-sm font-semibold tabular-nums">0{i + 1}</span>
-                  {t(`nav.${id}`)}
+                  {/* A dark "panel" that slides up behind the link on hover/focus,
+                      like a solar panel switching on */}
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 translate-y-full bg-forest-950 transition-transform duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:translate-y-0 group-focus-visible:translate-y-0"
+                  />
+
+                  <span className="relative w-6 shrink-0 text-xs font-semibold text-forest-950/55 tabular-nums transition-colors group-hover:text-solar group-focus-visible:text-solar">
+                    0{i + 1}
+                  </span>
+
+                  <span className="relative min-w-0 flex-1">
+                    <span className="block font-serif text-[clamp(1.6rem,3.6vw,2.5rem)] leading-tight font-normal italic transition-colors group-hover:text-solar group-focus-visible:text-solar">
+                      {t(`nav.${id}`)}
+                    </span>
+                    <span className="block text-xs text-forest-950/60 transition-colors group-hover:text-white/60 group-focus-visible:text-white/60">
+                      {t(`nav.desc.${id}`)}
+                    </span>
+                  </span>
+
+                  {/* Arrow that slides in on hover */}
+                  <span
+                    aria-hidden
+                    className="relative -translate-x-3 text-xl text-solar opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
+                  >
+                    →
+                  </span>
                 </a>
               </li>
             ))}
           </ol>
 
-          <div className="max-w-xs text-sm">
-            <p className="text-xs font-semibold tracking-widest text-forest-950/60 uppercase">
+          {/* Small dark card about the pilot site */}
+          <div
+            className="animate-rise rounded-tl-[2rem] rounded-tr-md rounded-br-[2rem] rounded-bl-md bg-forest-950 p-5 text-white"
+            style={{ animationDelay: '380ms' }}
+          >
+            <p className="flex items-center gap-2 text-xs font-semibold tracking-widest text-solar uppercase">
+              <LogoMark className="h-4 w-5" />
               {t('nav.pilot')}
             </p>
-            <p className="mt-2 text-lg font-semibold">{t('nav.pilotPlace')}</p>
-            <p className="text-forest-950/70">{t('nav.pilotWall')}</p>
+            <p className="mt-3 font-serif text-2xl italic">{t('nav.pilotPlace')}</p>
+            <p className="mt-1 text-sm text-white/60">{t('nav.pilotWall')}</p>
           </div>
         </div>
       </nav>

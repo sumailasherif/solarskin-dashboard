@@ -19,6 +19,8 @@
      Sora = clean, very readable body font. */
   --font-display: 'Unbounded', 'Sora', system-ui, sans-serif;
   --font-sans: 'Sora', system-ui, sans-serif;
+  /* Fraunces = soft, curvy serif, used in italic for the menu ("font-serif italic"). */
+  --font-serif: 'Fraunces', Georgia, serif;
 
   /* Animations. Use them as classes, e.g. "animate-rise" or "animate-shimmer". */
   --animate-orbit: orbit 24s linear infinite;
