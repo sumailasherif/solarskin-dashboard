@@ -287,11 +287,10 @@
       "now": "now",
       "bannerTitle": "Your wall made ≈ 22 kWh today",
       "bannerText": "South wall · Fergana pilot",
-      "co2Title": "CO₂ avoided",
+      "co2Title": "Less CO₂",
       "co2Value": "≈ 12 kg today",
-      "freqTitle": "New reading",
-      "freqValue": "every minute",
-      "note": "Example notifications. Planning estimates for an average day (8,000 kWh ÷ 365 ≈ 22 kWh; 22 kWh × 0.55 kg CO₂/kWh ≈ 12 kg), not live data."
+      "shadeTitle": "Shaded wall",
+      "shadeValue": "cooler in summer"
     }
   }
 }

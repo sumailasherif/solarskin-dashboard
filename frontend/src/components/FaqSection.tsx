@@ -109,13 +109,13 @@ function PhonePopups() {
         />
       </Popup>
 
-      {/* 3. "every minute" chip, top right in the background */}
+      {/* 3. "shaded wall" chip, top right in the background */}
       <Popup show={inView} delayMs={1500} className="top-[16%] right-[4%]">
         <Chip
-          title={t('faq.popups.freqTitle')}
-          value={t('faq.popups.freqValue')}
+          title={t('faq.popups.shadeTitle')}
+          value={t('faq.popups.shadeValue')}
           icon={
-            // clock
+            // thermometer
             <svg
               viewBox="0 0 24 24"
               className="h-5 w-5"
@@ -124,8 +124,8 @@ function PhonePopups() {
               strokeWidth="2"
               strokeLinecap="round"
             >
-              <circle cx="12" cy="12" r="8" />
-              <path d="M12 8v4l3 2" />
+              <path d="M10 13.5V5a2 2 0 1 1 4 0v8.5a4 4 0 1 1-4 0Z" />
+              <path d="M12 9v6" />
             </svg>
           }
         />
@@ -161,7 +161,6 @@ export function FaqSection() {
 
             <figcaption className="mt-4 text-sm text-forest-950/70">
               {t('faq.photoCaption')}
-              <span className="mt-1 block text-xs text-forest-950/50">{t('faq.popups.note')}</span>
             </figcaption>
           </figure>
         </Reveal>
