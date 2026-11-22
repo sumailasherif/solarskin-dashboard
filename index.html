@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolarSkin Dashboard</title>
+
+  <!-- Our own styles live in a separate file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER: project name and pilot location -->
+  <header>
+    <h1>SolarSkin Dashboard</h1>
+    <p>Façade solar pilot · Fergana, Uzbekistan</p>
+  </header>
+
+  <main>
+    <!-- 2. KPI CARDS: the four headline numbers.
+         The "--" values are placeholders. In Step 3 JavaScript will fill them in,
+         which is why each value has an id. -->
+    <section class="cards">
+      <div class="card">
+        <h2>Energy generated</h2>
+        <p class="value" id="kpi-energy">--</p>
+        <p class="unit">kWh</p>
+      </div>
+
+      <div class="card">
+        <h2>CO₂ avoided</h2>
+        <p class="value" id="kpi-co2">--</p>
+        <p class="unit">kg CO₂ (at 0.55 t/MWh)</p>
+      </div>
+
+      <div class="card">
+        <h2>Wall cooling</h2>
+        <p class="value" id="kpi-cooling">--</p>
+        <p class="unit">°C cooler than reference wall</p>
+      </div>
+
+      <div class="card">
+        <h2>Peak irradiance</h2>
+        <p class="value" id="kpi-irradiance">--</p>
+        <p class="unit">W/m²</p>
+      </div>
+    </section>
+
+    <!-- 3. CHART AREA: empty for now. The charts get added in Step 4. -->
+    <section class="chart-box">
+      <h2>Charts</h2>
+      <p class="placeholder">Charts coming in Step 4.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>SolarSkin · Global Sustainability Challenge 2026–27</p>
+  </footer>
+
+</body>
+</html>
