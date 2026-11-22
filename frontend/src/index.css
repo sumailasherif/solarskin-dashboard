@@ -33,6 +33,20 @@
   --animate-light-up: light-up 0.8s ease-out both; /* panels switching on, floor by floor */
   --animate-sparkle: sparkle 3.2s ease-out infinite; /* energy rising off the panels */
   --animate-marquee: marquee 32s linear infinite; /* the scrolling ticker band */
+  --animate-pop: pop 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.25) both; /* phone notifications popping up */
+  --animate-float: float 6s ease-in-out infinite; /* gentle bobbing after they appear */
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: translateY(14px) scale(0.6);
+    }
+  }
+  @keyframes float {
+    50% {
+      transform: translateY(-6px);
+    }
+  }
 
   @keyframes orbit {
     to {

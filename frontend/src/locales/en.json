@@ -15,11 +15,13 @@
       "impact": "The pilot in numbers",
       "sdgs": "The UN goals we work towards",
       "measure": "Energy, CO₂ and wall cooling",
-      "method": "How every number is counted"
+      "method": "How every number is counted",
+      "faq": "Answers to common questions"
     },
     "pilot": "Pilot site",
     "pilotPlace": "Fergana, Uzbekistan",
-    "pilotWall": "South wall · ~10 kWp"
+    "pilotWall": "South wall · ~10 kWp",
+    "faq": "FAQ"
   },
   "hero": {
     "eyebrow": "Façade solar pilot · Fergana, Uzbekistan",
@@ -233,7 +235,63 @@
       "panelCloseUp": "Solar panel close-up",
       "solarField": "Solar field",
       "installer": "Panel installation",
-      "sensorKit": "Electronic components"
+      "sensorKit": "Electronic components",
+      "residentPhone": "Man with a smartphone, Chongqing"
+    }
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Questions, answered",
+    "lead": "Everything you need to know about SolarSkin, in plain language.",
+    "photoCaption": "Residents will be able to check their wall's output on their phone.",
+    "items": [
+      {
+        "q": "What is SolarSkin?",
+        "a": "A low-cost retrofit that mounts solar modules on the sunny walls of existing apartment blocks. The modules make electricity and shade the wall, so less summer heat gets into the building."
+      },
+      {
+        "q": "Does anything change inside the flats?",
+        "a": "No. The modules are mounted on the outside wall, so nothing changes inside the flats and residents can stay at home during installation."
+      },
+      {
+        "q": "How much electricity will one wall make?",
+        "a": "Our planning estimate for the 10 kWp pilot wall is about 8,000 kWh a year (800 kWh per kWp). Once the sensor kit is running, this dashboard will show the measured figure instead."
+      },
+      {
+        "q": "How will residents see the results?",
+        "a": "On this dashboard, from any phone or computer. It shows the power right now, the energy generated, the CO₂ avoided and how much cooler the shaded wall is, in plain language."
+      },
+      {
+        "q": "How do you know the wall is cooler?",
+        "a": "We measure two walls: one shaded by the modules and an identical bare one on the same building. Temperature sensors on both show the difference every minute."
+      },
+      {
+        "q": "How is the CO₂ saving calculated?",
+        "a": "Electricity generated (kWh) × Uzbekistan's grid emission factor of 0.55 t CO₂ per MWh (UNFCCC CDM standardised baseline ASB0003). We also show a lower value of 0.47 t/MWh as a sensitivity check."
+      },
+      {
+        "q": "Can the system control anything in the building?",
+        "a": "No. It is monitoring only: the sensor kit takes measurements and never switches or controls any equipment."
+      },
+      {
+        "q": "How often is data recorded?",
+        "a": "Every minute. If the WiFi connection drops, the kit stores its readings and uploads them later, so no data is lost."
+      },
+      {
+        "q": "Is the pilot installed yet?",
+        "a": "Not yet. The first SolarSkin wall will be installed and measured in Fergana. Until then, every figure on this page is labelled as a planning estimate."
+      }
+    ],
+    "popups": {
+      "app": "SolarSkin",
+      "now": "now",
+      "bannerTitle": "Your wall made ≈ 22 kWh today",
+      "bannerText": "South wall · Fergana pilot",
+      "co2Title": "CO₂ avoided",
+      "co2Value": "≈ 12 kg today",
+      "freqTitle": "New reading",
+      "freqValue": "every minute",
+      "note": "Example notifications. Planning estimates for an average day (8,000 kWh ÷ 365 ≈ 22 kWh; 22 kWh × 0.55 kg CO₂/kWh ≈ 12 kg), not live data."
     }
   }
 }

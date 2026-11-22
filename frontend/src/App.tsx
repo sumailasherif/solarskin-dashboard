@@ -1,6 +1,6 @@
 // The whole dashboard page, top to bottom:
 //   header + menu → hero → ticker → story (photos) → live → impact numbers →
-//   sustainability + SDGs → KPI cards → method → footer.
+//   sustainability + SDGs → KPI cards → method → FAQ → footer.
 // SolarSkin's own look: forest greens (sustainability) + solar yellow (energy),
 // Unbounded + Sora fonts, an animated solar-façade skyline, leaf-shaped cards,
 // outlined count-up numbers and sections that rise into view as you scroll.
@@ -8,6 +8,7 @@
 // rather than fake numbers.
 import { useTranslation } from 'react-i18next';
 import { CountUp } from './components/CountUp';
+import { FaqSection } from './components/FaqSection';
 import { HeroScene } from './components/HeroScene';
 import { KpiCard } from './components/KpiCard';
 import { LiveSection } from './components/LiveSection';
@@ -238,6 +239,9 @@ export default function App() {
             </ol>
           </div>
         </section>
+
+        {/* 6. FAQ: common questions + a resident checking his wall on his phone */}
+        <FaqSection />
       </main>
 
       <footer className="bg-forest-950 px-4 py-10 text-center text-xs text-white/50 sm:px-8">

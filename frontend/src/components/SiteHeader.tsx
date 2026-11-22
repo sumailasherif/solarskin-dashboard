@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { LogoMark } from './LogoMark';
 
 // The page sections the menu links to. The ids match <section id="..."> in App.tsx.
-const LINKS = ['story', 'live', 'impact', 'sdgs', 'measure', 'method'] as const;
+const LINKS = ['story', 'live', 'impact', 'sdgs', 'measure', 'method', 'faq'] as const;
 
 export function SiteHeader() {
   const { t } = useTranslation();
