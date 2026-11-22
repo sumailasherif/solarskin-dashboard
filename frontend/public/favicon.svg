@@ -1,20 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
   <!-- SolarSkin logo mark on the navy logo circle.
-       Same shapes and proportions as src/components/LogoMark.tsx, just scaled up. -->
+       Shapes measured from the official logo (same numbers as src/components/LogoMark.tsx),
+       enlarged 1.45× so it is readable as a tiny browser-tab icon. -->
   <defs>
-    <!-- The sun circle, cut off flat at y = 442 -->
-    <clipPath id="sun"><rect x="0" y="0" width="640" height="442"/></clipPath>
-    <clipPath id="dome" clip-path="url(#sun)"><circle cx="320" cy="339" r="170"/></clipPath>
+    <clipPath id="sun"><circle cx="319.5" cy="220" r="119"/></clipPath>
   </defs>
   <circle cx="320" cy="320" r="320" fill="#13223a"/>
-  <!-- Five solar panels with thin gaps between them -->
-  <g clip-path="url(#dome)" fill="#f5b82e">
-    <rect x="149" y="160" width="69" height="282"/>
-    <rect x="236" y="160" width="44" height="282"/>
-    <rect x="298" y="160" width="44" height="282"/>
-    <rect x="360" y="160" width="44" height="282"/>
-    <rect x="422" y="160" width="69" height="282"/>
+  <g transform="translate(320 320) scale(1.45) translate(-320 -202)" fill="#f5b82e">
+    <g clip-path="url(#sun)">
+      <rect x="190" y="98" width="50" height="185.5"/>
+      <rect x="255" y="98" width="26" height="185.5"/>
+      <rect x="296" y="98" width="25" height="185.5"/>
+      <rect x="336" y="98" width="26" height="185.5"/>
+      <rect x="377" y="98" width="73" height="185.5"/>
+    </g>
+    <rect x="210" y="295" width="221" height="9" rx="4.5"/>
   </g>
-  <!-- Base line -->
-  <rect x="157" y="456" width="326" height="16" rx="8" fill="#f5b82e"/>
 </svg>

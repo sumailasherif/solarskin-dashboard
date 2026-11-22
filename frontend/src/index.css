@@ -21,6 +21,8 @@
   --font-sans: 'Sora', system-ui, sans-serif;
   /* Fraunces = soft, curvy serif, used in italic for the menu ("font-serif italic"). */
   --font-serif: 'Fraunces', Georgia, serif;
+  /* Montserrat = the font of the official logo. Only for the "SOLARSKIN" wordmark ("font-logo"). */
+  --font-logo: 'Montserrat', system-ui, sans-serif;
 
   /* Animations. Use them as classes, e.g. "animate-rise" or "animate-shimmer". */
   --animate-orbit: orbit 24s linear infinite;

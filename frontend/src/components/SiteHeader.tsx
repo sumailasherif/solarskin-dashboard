@@ -49,12 +49,12 @@ export function SiteHeader() {
         >
           <a
             href="#top"
-            className="flex items-center gap-3 font-display text-base tracking-[0.2em] uppercase sm:text-lg"
+            className="flex items-center gap-2.5 font-logo text-xl tracking-[0.03em] uppercase sm:text-2xl"
           >
             {/* Logo mark: yellow normally, dark on the yellow menu page so it stays visible */}
             <LogoMark className={`h-8 w-9 ${open ? 'text-forest-950' : 'text-solar'}`} />
-            {/* Wordmark like the logo: SOLAR bold, SKIN lighter and yellow */}
-            <span>
+            {/* Wordmark exactly like the logo: Montserrat, SOLAR bold + SKIN regular in yellow */}
+            <span className="leading-none">
               <span className="font-bold">Solar</span>
               <span className={`font-normal ${open ? '' : 'text-solar'}`}>Skin</span>
             </span>
@@ -92,7 +92,7 @@ export function SiteHeader() {
         {/* Our logo's panel-sun, huge and very faint, as a watermark in the corner */}
         <LogoMark className="pointer-events-none absolute -right-24 -bottom-20 h-[26rem] w-[29rem] text-forest-950/[0.07]" />
 
-        <div className="relative mx-auto grid min-h-full max-w-6xl content-end gap-10 px-4 pt-28 pb-10 sm:px-8 lg:grid-cols-[1fr_17rem] lg:items-end">
+        <div className="relative mx-auto grid min-h-full max-w-6xl content-center gap-10 px-4 pt-28 pb-10 sm:px-8 lg:grid-cols-[1fr_17rem] lg:items-end">
           {/* Links: 1 column on phones, 2 on wider screens. Each one rises in, one after another. */}
           <ol className="grid gap-x-8 sm:grid-cols-2">
             {LINKS.map((id, i) => (
