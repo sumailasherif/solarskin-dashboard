@@ -3,8 +3,10 @@
   "nav": {
     "open": "Open menu",
     "close": "Close menu",
+    "story": "Story",
     "live": "Live",
     "impact": "Impact",
+    "sdgs": "SDGs",
     "measure": "Measure",
     "method": "Method",
     "pilot": "Pilot site",
@@ -19,6 +21,28 @@
     "cta": "See the live wall",
     "orbit": "Live from Fergana · Every five minutes · "
   },
+  "story": {
+    "kicker": "Why walls?",
+    "title": "Walls that work for the city",
+    "lead": "Apartment blocks across Central Asia have big walls that face the sun all day. Today those walls soak up summer heat and make no energy. SolarSkin turns them into small power plants that also shade the building.",
+    "cards": {
+      "walls": {
+        "place": "Tashkent, Uzbekistan",
+        "title": "The walls",
+        "text": "Rows of apartment blocks with large, sunny walls: plenty of space for solar modules without touching a single roof."
+      },
+      "city": {
+        "place": "Fergana, Uzbekistan",
+        "title": "The pilot city",
+        "text": "Fergana sits in a sunny valley in eastern Uzbekistan. The first SolarSkin wall is being measured here."
+      },
+      "idea": {
+        "place": "Example façade",
+        "title": "The idea",
+        "text": "Solar modules mounted on a wall make electricity and shade it at the same time. (Example photo, not the SolarSkin pilot.)"
+      }
+    }
+  },
   "live": {
     "title": "One day, one wall",
     "from": "Live from Fergana",
@@ -32,20 +56,104 @@
     "sunset": "Sunset",
     "sunUp": "Daylight in Fergana",
     "sunDown": "Night in Fergana",
-    "ranges": { "24h": "24 hours", "7d": "7 days", "14d": "14 days", "30d": "30 days" }
+    "ranges": {
+      "24h": "24 hours",
+      "7d": "7 days",
+      "14d": "14 days",
+      "30d": "30 days"
+    }
   },
   "impact": {
     "kicker": "The pilot, in numbers",
     "estimate": "Planning estimate",
     "source": "Source",
-    "size": { "value": "10", "unit": "kWp", "text": "of modules on one south wall" },
-    "yield": { "value": "8,000", "unit": "kWh/yr", "text": "expected per year at 800 kWh per kWp" },
+    "size": {
+      "value": "10",
+      "unit": "kWp",
+      "text": "of modules on one south wall"
+    },
+    "yield": {
+      "value": "8,000",
+      "unit": "kWh/yr",
+      "text": "expected per year at 800 kWh per kWp"
+    },
     "factor": {
       "value": "0.55",
       "unit": "t CO₂/MWh",
       "text": "Uzbekistan grid factor, UNFCCC CDM ASB0003"
     },
-    "scale": { "value": "8", "unit": "GWh/yr", "text": "if 1,000 blocks got the same retrofit" }
+    "scale": {
+      "value": "8",
+      "unit": "GWh/yr",
+      "text": "if 1,000 blocks got the same retrofit"
+    }
+  },
+  "sustainability": {
+    "kicker": "Sustainability",
+    "title": "Good for the planet, the people and the budget",
+    "lead": "SolarSkin is built to be sustainable in three ways at once. And because every claim needs proof, the dashboard measures each one.",
+    "pillars": {
+      "planet": {
+        "title": "Planet",
+        "points": [
+          "Clean electricity from sunlight, made right where it is used",
+          "Less grid power from fossil fuels, so less CO₂",
+          "Shaded walls take in less summer heat"
+        ]
+      },
+      "people": {
+        "title": "People",
+        "points": [
+          "Cooler walls can mean cooler homes in hot summers",
+          "Nothing changes inside the flats: modules mount outside",
+          "Open data that residents and the city can check"
+        ]
+      },
+      "economy": {
+        "title": "Economy",
+        "points": [
+          "Low-cost modules and off-the-shelf sensors",
+          "Uses walls that already exist: no new land needed",
+          "A retrofit that can scale from one block to many"
+        ]
+      }
+    },
+    "sdgTitle": "The SDGs we contribute to",
+    "sdgLead": "Four of the UN Sustainable Development Goals, each linked to the exact target and the dashboard number that tracks it.",
+    "sdgLabel": "SDG",
+    "target": "UN target",
+    "trackedBy": "Tracked on this dashboard by",
+    "sdgs": {
+      "7": {
+        "name": "Affordable and clean energy",
+        "how": "Turns sunny apartment walls into a source of renewable electricity.",
+        "targetId": "7.2",
+        "target": "Increase the share of renewable energy",
+        "tracked": "Energy generated (kWh)"
+      },
+      "9": {
+        "name": "Industry, innovation and infrastructure",
+        "how": "A low-cost retrofit that upgrades buildings that already exist.",
+        "targetId": "9.4",
+        "target": "Upgrade infrastructure and retrofit it to be sustainable",
+        "tracked": "Pilot size and uptime of the sensor kit"
+      },
+      "11": {
+        "name": "Sustainable cities and communities",
+        "how": "Makes housing blocks greener and the city's homes less hot.",
+        "targetId": "11.6",
+        "target": "Reduce the environmental impact of cities",
+        "tracked": "Wall cooling vs the bare reference wall (°C)"
+      },
+      "13": {
+        "name": "Climate action",
+        "how": "Cuts CO₂ and helps buildings cope with hotter summers.",
+        "targetId": "13.1",
+        "target": "Strengthen resilience and adaptation to climate hazards",
+        "tracked": "CO₂ avoided (kg) and wall cooling (°C)"
+      }
+    },
+    "disclaimer": "SDG names and colours are used for information only. The content of this page has not been approved by the United Nations and does not reflect the views of the United Nations or its officials or Member States."
   },
   "measure": {
     "title1": "Measure.",
@@ -54,10 +162,24 @@
     "lead": "Four numbers, straight from the wall. We show nothing we didn't measure."
   },
   "kpi": {
-    "energy": { "label": "Energy generated", "unit": "kWh" },
-    "co2": { "label": "CO₂ avoided", "unit": "kg CO₂", "note": "at 0.55 t/MWh grid factor" },
-    "cooling": { "label": "Wall cooling", "unit": "°C", "note": "cooler than the reference wall" },
-    "irradiance": { "label": "Peak irradiance", "unit": "W/m²" }
+    "energy": {
+      "label": "Energy generated",
+      "unit": "kWh"
+    },
+    "co2": {
+      "label": "CO₂ avoided",
+      "unit": "kg CO₂",
+      "note": "at 0.55 t/MWh grid factor"
+    },
+    "cooling": {
+      "label": "Wall cooling",
+      "unit": "°C",
+      "note": "cooler than the reference wall"
+    },
+    "irradiance": {
+      "label": "Peak irradiance",
+      "unit": "W/m²"
+    }
   },
   "method": {
     "title": "How we count",
@@ -74,7 +196,8 @@
         "h": "Every factor has a source",
         "p": "CO₂ uses the UNFCCC grid factor (0.55 t/MWh). Anything we estimate is labelled as an estimate."
       }
-    ]
+    ],
+    "photoCaption": "The kind of low-cost, off-the-shelf parts our sensor kit is built from"
   },
   "ticker": [
     "Generate power",
@@ -84,5 +207,8 @@
     "Fergana pilot 2026"
   ],
   "noData": "No data yet",
-  "footer": "SolarSkin · Global Sustainability Challenge 2026–27 · Dashboard by Sherif Sumaila"
+  "footer": "SolarSkin · Global Sustainability Challenge 2026–27 · Dashboard by Sherif Sumaila",
+  "gallery": {
+    "label": "Photos of buildings, solar panels and Uzbekistan"
+  }
 }

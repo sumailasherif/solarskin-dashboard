@@ -1,5 +1,6 @@
 // The whole dashboard page, top to bottom:
-//   header + menu → hero → ticker → live → impact numbers → KPI cards → method → footer.
+//   header + menu → hero → ticker → story (photos) → live → impact numbers →
+//   sustainability + SDGs → KPI cards → method → footer.
 // SolarSkin's own look: forest greens (sustainability) + solar yellow (energy),
 // Unbounded + Sora fonts, an animated solar-façade skyline, leaf-shaped cards,
 // outlined count-up numbers and sections that rise into view as you scroll.
@@ -12,8 +13,12 @@ import { KpiCard } from './components/KpiCard';
 import { LiveSection } from './components/LiveSection';
 import { Marquee } from './components/Marquee';
 import { OrbitBadge } from './components/OrbitBadge';
+import { PhotoStrip } from './components/PhotoStrip';
 import { Reveal } from './components/Reveal';
 import { SiteHeader } from './components/SiteHeader';
+import { StorySection } from './components/StorySection';
+import { SustainabilitySection } from './components/SustainabilitySection';
+import { PHOTOS, photoSrcSet, photoUrl } from './content/photos';
 
 // The four big planning numbers from the project brief. Each is labelled as an estimate.
 const IMPACT = ['size', 'yield', 'factor', 'scale'] as const;
@@ -85,12 +90,30 @@ export default function App() {
         {/* Yellow ticker band */}
         <Marquee items={ticker} />
 
+        {/* STORY: real photos (Tashkent, Fergana, a solar façade) explain why walls */}
+        <StorySection />
+
         {/* 2. LIVE: clock, sun path, range chips, chart */}
         <LiveSection />
 
         {/* 3. IMPACT: giant gradient numbers from the plan that count up, each labelled as an estimate */}
-        <section id="impact" className="bg-forest-950 px-4 py-24 sm:px-8 sm:py-32">
-          <div className="mx-auto max-w-7xl">
+        <section
+          id="impact"
+          className="relative overflow-hidden bg-forest-950 px-4 py-24 sm:px-8 sm:py-32"
+        >
+          {/* Real photo of solar cells behind the numbers, darkened so the text stays readable */}
+          <img
+            src={photoUrl(PHOTOS.panelCloseUp, 1600)}
+            srcSet={photoSrcSet(PHOTOS.panelCloseUp)}
+            sizes="100vw"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-forest-950 via-forest-950/80 to-forest-950" />
+
+          <div className="relative mx-auto max-w-7xl">
             <Reveal>
               <p className="text-xs font-semibold tracking-widest text-solar uppercase">
                 {t('impact.kicker')}
@@ -119,6 +142,12 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* PHOTO STRIP: real photos sliding by */}
+        <PhotoStrip />
+
+        {/* SUSTAINABILITY: the three pillars + the UN Sustainable Development Goals we support */}
+        <SustainabilitySection />
 
         {/* 4. MEASURE: solid yellow section with the four KPI cards */}
         <section id="measure" className="bg-solar px-4 py-24 text-forest-950 sm:px-8 sm:py-32">
@@ -151,13 +180,47 @@ export default function App() {
         </section>
 
         {/* 5. METHOD: how the numbers are made */}
-        <section id="method" className="bg-forest px-4 py-24 sm:px-8 sm:py-32">
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <h2 className="font-display text-[clamp(1.8rem,5vw,3.75rem)] leading-none font-bold uppercase">
-                {t('method.title')}
-              </h2>
-            </Reveal>
+        <section
+          id="method"
+          className="relative overflow-hidden bg-forest px-4 py-24 sm:px-8 sm:py-32"
+        >
+          {/* Uzbek mountain landscape behind the section, tinted green */}
+          <img
+            src={photoUrl(PHOTOS.uzLandscape, 1600)}
+            srcSet={photoSrcSet(PHOTOS.uzLandscape)}
+            sizes="100vw"
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-forest/95 via-forest/90 to-forest-950/80" />
+
+          <div className="relative mx-auto max-w-7xl">
+            <div className="grid items-center gap-10 lg:grid-cols-2">
+              <Reveal>
+                <h2 className="font-display text-[clamp(1.8rem,5vw,3.75rem)] leading-none font-bold uppercase">
+                  {t('method.title')}
+                </h2>
+              </Reveal>
+              {/* Photo of the kind of parts the sensor kit uses */}
+              <Reveal delayMs={150}>
+                <figure className="relative overflow-hidden rounded-tl-[3rem] rounded-tr-xl rounded-br-[3rem] rounded-bl-xl shadow-2xl ring-1 ring-white/10">
+                  <img
+                    src={photoUrl(PHOTOS.sensorKit, 1080)}
+                    srcSet={photoSrcSet(PHOTOS.sensorKit)}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    alt={PHOTOS.sensorKit.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[16/10] w-full object-cover"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950/90 to-transparent p-5 pt-12 text-sm text-white/85">
+                    {t('method.photoCaption')}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            </div>
             <ol className="mt-14 grid gap-10 md:grid-cols-3">
               {methodItems.map((item, i) => (
                 <li key={item.h}>

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { LogoMark } from './LogoMark';
 
 // The page sections the menu links to. The ids match <section id="..."> in App.tsx.
-const LINKS = ['live', 'impact', 'measure', 'method'] as const;
+const LINKS = ['story', 'live', 'impact', 'sdgs', 'measure', 'method'] as const;
 
 export function SiteHeader() {
   const { t } = useTranslation();
@@ -51,9 +51,12 @@ export function SiteHeader() {
             href="#top"
             className="flex items-center gap-3 font-display text-base tracking-[0.2em] uppercase sm:text-lg"
           >
-            <LogoMark className="h-8 w-8" />
+            {/* Logo mark: yellow normally, dark on the yellow menu page so it stays visible */}
+            <LogoMark className={`h-8 w-9 ${open ? 'text-forest-950' : 'text-solar'}`} />
+            {/* Wordmark like the logo: SOLAR bold, SKIN lighter and yellow */}
             <span>
-              Solar<span className={open ? '' : 'text-leaf'}>Skin</span>
+              <span className="font-bold">Solar</span>
+              <span className={`font-normal ${open ? '' : 'text-solar'}`}>Skin</span>
             </span>
           </a>
 
@@ -93,7 +96,7 @@ export function SiteHeader() {
                 <a
                   href={`#${id}`}
                   onClick={() => setOpen(false)}
-                  className="group flex items-baseline gap-4 py-2 font-display text-[clamp(2.5rem,9vw,6.5rem)] leading-none uppercase transition hover:translate-x-3"
+                  className="group flex items-baseline gap-4 py-2 font-display text-[clamp(2rem,7vw,5rem)] leading-none uppercase transition hover:translate-x-3"
                 >
                   <span className="font-sans text-sm font-semibold tabular-nums">0{i + 1}</span>
                   {t(`nav.${id}`)}

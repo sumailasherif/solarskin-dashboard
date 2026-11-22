@@ -1,28 +1,38 @@
-// The SolarSkin logo mark: a green leaf whose surface is a grid of solar cells,
-// with a small sun at its tip. Leaf = sustainability, cells = solar, sun = energy.
+// The SolarSkin logo mark: a rising sun drawn as a dome of vertical solar panels,
+// standing on a straight base line (the building's façade).
+// It's drawn in SVG (not a picture file) so it stays sharp at every size and its
+// background is see-through, so it sits nicely on any colour.
+// Its colour comes from the text colour around it ("currentColor"), so set it with a
+// class, e.g. <LogoMark className="h-8 w-8 text-solar" />.
+import { useId } from 'react';
+
+// Where the four thin gaps between the five panels sit (x positions, in SVG units).
+const GAPS = [257, 299, 341, 383];
+const GAP_WIDTH = 12;
+
 export function LogoMark({ className = '' }: { className?: string }) {
+  // Each <svg> needs its own clip-path id, in case the logo appears twice on a page.
+  const clipId = useId();
+
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden>
+    <svg viewBox="200 92 240 216" className={className} aria-hidden>
       <defs>
-        {/* A leaf shape: two curves meeting at the tips */}
-        <clipPath id="leaf-clip">
-          <path d="M6 34 C6 16 16 6 34 6 C34 24 24 34 6 34 Z" />
+        {/* The sun: a circle with its bottom cut off flat */}
+        <clipPath id={clipId}>
+          <circle cx="320" cy="215" r="115" />
         </clipPath>
       </defs>
-      <path d="M6 34 C6 16 16 6 34 6 C34 24 24 34 6 34 Z" fill="#4cc27a" />
-      {/* Solar-cell grid, only visible inside the leaf */}
-      <g clipPath="url(#leaf-clip)" stroke="#04160f" strokeWidth="1.2" opacity="0.55">
-        {[12, 18, 24, 30].map((v) => (
-          <g key={v}>
-            <line x1={v} y1="0" x2={v} y2="40" />
-            <line x1="0" y1={v} x2="40" y2={v} />
-          </g>
-        ))}
+
+      {/* Five panels = the circle, minus four thin vertical gaps, cut off at y = 285 */}
+      <g clipPath={`url(#${clipId})`} fill="currentColor">
+        {[200, ...GAPS.map((g) => g + GAP_WIDTH / 2)].map((left, i) => {
+          const right = i < GAPS.length ? GAPS[i]! - GAP_WIDTH / 2 : 440;
+          return <rect key={left} x={left} y="92" width={right - left} height="193" />;
+        })}
       </g>
-      {/* The leaf's central vein */}
-      <path d="M6 34 L30 10" stroke="#04160f" strokeWidth="1.6" strokeLinecap="round" />
-      {/* The sun */}
-      <circle cx="33" cy="7" r="5" fill="#f5b82e" />
+
+      {/* Base line under the sun */}
+      <rect x="210" y="294" width="220" height="11" rx="5.5" fill="currentColor" />
     </svg>
   );
 }
