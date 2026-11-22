@@ -208,14 +208,6 @@ export function SiteHeader() {
             </li>
           ))}
         </ol>
-        <a
-          href="#live"
-          onClick={() => setOpen(false)}
-          className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-forest-950 px-4 py-3.5 text-sm font-semibold text-solar"
-        >
-          {t('nav.cta')}
-          <ArrowDown />
-        </a>
       </nav>
     </header>
   );

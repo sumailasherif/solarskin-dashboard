@@ -48,6 +48,27 @@
     }
   }
 
+  /* Hero badge "mini video": energy lines running across the panels, and a slow camera drift */
+  --animate-flow: flow 2.6s linear infinite;
+  --animate-drift-zoom: drift-zoom 14s ease-in-out infinite alternate;
+
+  @keyframes flow {
+    from {
+      stroke-dashoffset: 100;
+    }
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+  @keyframes drift-zoom {
+    from {
+      transform: scale(1.25) translate(-4%, 3%);
+    }
+    to {
+      transform: scale(1.45) translate(5%, -4%);
+    }
+  }
+
   @keyframes orbit {
     to {
       transform: rotate(360deg);

@@ -74,9 +74,11 @@ export default function App() {
               <p className="mt-6 max-w-lg animate-rise text-base leading-relaxed text-white/80 [animation-delay:400ms] sm:text-lg">
                 {t('hero.lead')}
               </p>
+              {/* Only on phones/tablets: on laptops the same button sits in the nav bar,
+                    so there is only ever ONE "See the live wall" button on screen */}
               <a
                 href="#live"
-                className="mt-8 inline-flex animate-rise items-center gap-3 rounded-full bg-solar px-6 py-3.5 text-sm font-semibold text-forest-950 transition-all [animation-delay:540ms] hover:gap-5 hover:bg-solar-300"
+                className="mt-8 inline-flex animate-rise items-center gap-3 rounded-full bg-solar px-6 py-3.5 text-sm font-semibold text-forest-950 transition-all [animation-delay:540ms] hover:gap-5 hover:bg-solar-300 lg:hidden"
               >
                 {t('hero.cta')}
                 <svg
@@ -95,9 +97,9 @@ export default function App() {
             </div>
           </div>
 
-          {/* Spinning badge, bottom left of the building */}
+          {/* Spinning badge, bottom left of the building (decoration only, not a link) */}
           <div className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 md:block lg:right-auto lg:left-[52%]">
-            <OrbitBadge text={t('hero.orbit')} href="#live" label={t('hero.cta')} />
+            <OrbitBadge text={t('hero.orbit')} />
           </div>
         </section>
 
