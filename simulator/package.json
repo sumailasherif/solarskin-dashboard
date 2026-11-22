@@ -7,5 +7,12 @@
   "scripts": {
     "start": "tsx src/index.ts",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@solarskin/shared": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15"
   }
 }

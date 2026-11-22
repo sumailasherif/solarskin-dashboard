@@ -1,16 +1,144 @@
 /* Tailwind gives us small utility classes (e.g. "p-4", "rounded-2xl").
-   The @theme block adds OUR brand colours so we can write "bg-navy" or "text-solar". */
+   The @theme block adds OUR brand colours and fonts, so we can write
+   "bg-forest", "text-solar" or "font-display". */
 @import 'tailwindcss';
 
 @theme {
-  --color-navy: #0b2e4f;
-  --color-navy-700: #123d66;
-  --color-navy-50: #eef3f8;
+  /* Greens = sustainability. Forest for backgrounds, leaf for bright accents. */
+  --color-forest: #0f3d29;
+  --color-forest-700: #17583a;
+  --color-forest-950: #04160f; /* almost black green: night sky, text on yellow */
+  --color-forest-50: #ecf6ef;
+  --color-leaf: #4cc27a;
+  --color-leaf-300: #8fe0ab;
   --color-solar: #f5b82e;
+  --color-solar-300: #ffd36b;
   --color-solar-100: #fdf1d3;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Unbounded = bold, rounded, wide headline font (SolarSkin's signature).
+     Sora = clean, very readable body font. */
+  --font-display: 'Unbounded', 'Sora', system-ui, sans-serif;
+  --font-sans: 'Sora', system-ui, sans-serif;
+
+  /* Animations. Use them as classes, e.g. "animate-rise" or "animate-shimmer". */
+  --animate-orbit: orbit 24s linear infinite;
+  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-glow: glow 5s ease-in-out infinite; /* the sun breathing */
+  --animate-drift: drift 70s linear infinite; /* clouds sliding across */
+  --animate-shimmer: shimmer 6s ease-in-out infinite; /* light sweeping over the panels */
+  --animate-light-up: light-up 0.8s ease-out both; /* panels switching on, floor by floor */
+  --animate-sparkle: sparkle 3.2s ease-out infinite; /* energy rising off the panels */
+  --animate-marquee: marquee 32s linear infinite; /* the scrolling ticker band */
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+  }
+  @keyframes glow {
+    50% {
+      transform: scale(1.08);
+      opacity: 0.75;
+    }
+  }
+  @keyframes drift {
+    from {
+      transform: translateX(-300px);
+    }
+    to {
+      transform: translateX(1900px);
+    }
+  }
+  @keyframes shimmer {
+    0%,
+    35% {
+      transform: translateX(-700px) skewX(-20deg);
+    }
+    75%,
+    100% {
+      transform: translateX(700px) skewX(-20deg);
+    }
+  }
+  @keyframes light-up {
+    from {
+      opacity: 0.1;
+    }
+  }
+  @keyframes sparkle {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.6);
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-70px) scale(1);
+    }
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* SVG shapes scale/rotate around their own centre (not the corner of the drawing). */
+.svg-centre {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Fade-and-rise for sections as they scroll into view (see components/Reveal.tsx). */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-navy-50 font-sans text-navy antialiased;
+  @apply bg-forest-950 font-sans text-white antialiased;
+}
+
+/* A faint grid of solar cells, used as a background texture.
+   Two sets of thin lines (across and down) make the cell pattern. */
+@utility bg-cells {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Respect people who turn animations off in their system settings. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

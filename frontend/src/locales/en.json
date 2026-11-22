@@ -1,7 +1,57 @@
 {
-  "header": {
-    "title": "SolarSkin Dashboard",
-    "subtitle": "Façade solar pilot · Fergana, Uzbekistan"
+  "brand": "SolarSkin",
+  "nav": {
+    "open": "Open menu",
+    "close": "Close menu",
+    "live": "Live",
+    "impact": "Impact",
+    "measure": "Measure",
+    "method": "Method",
+    "pilot": "Pilot site",
+    "pilotPlace": "Fergana, Uzbekistan",
+    "pilotWall": "South wall · ~10 kWp"
+  },
+  "hero": {
+    "eyebrow": "Façade solar pilot · Fergana, Uzbekistan",
+    "line1": "Sunlight,",
+    "line2": "on the record.",
+    "lead": "Solar modules on the walls of apartment blocks. Every watt they make and every degree they keep off the wall, measured.",
+    "cta": "See the live wall",
+    "orbit": "Live from Fergana · Every five minutes · "
+  },
+  "live": {
+    "title": "One day, one wall",
+    "from": "Live from Fergana",
+    "localTime": "Local time · Uzbekistan · Asia/Tashkent (GMT+5)",
+    "power": "Power right now",
+    "unit": "kW",
+    "waiting": "Waiting for the first reading. The sensor kit isn't connected yet.",
+    "chartEmpty": "No readings yet",
+    "sunPath": "Today's path of the sun over Fergana",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "sunUp": "Daylight in Fergana",
+    "sunDown": "Night in Fergana",
+    "ranges": { "24h": "24 hours", "7d": "7 days", "14d": "14 days", "30d": "30 days" }
+  },
+  "impact": {
+    "kicker": "The pilot, in numbers",
+    "estimate": "Planning estimate",
+    "source": "Source",
+    "size": { "value": "10", "unit": "kWp", "text": "of modules on one south wall" },
+    "yield": { "value": "8,000", "unit": "kWh/yr", "text": "expected per year at 800 kWh per kWp" },
+    "factor": {
+      "value": "0.55",
+      "unit": "t CO₂/MWh",
+      "text": "Uzbekistan grid factor, UNFCCC CDM ASB0003"
+    },
+    "scale": { "value": "8", "unit": "GWh/yr", "text": "if 1,000 blocks got the same retrofit" }
+  },
+  "measure": {
+    "title1": "Measure.",
+    "title2": "Prove.",
+    "title3": "Scale.",
+    "lead": "Four numbers, straight from the wall. We show nothing we didn't measure."
   },
   "kpi": {
     "energy": { "label": "Energy generated", "unit": "kWh" },
@@ -9,10 +59,30 @@
     "cooling": { "label": "Wall cooling", "unit": "°C", "note": "cooler than the reference wall" },
     "irradiance": { "label": "Peak irradiance", "unit": "W/m²" }
   },
-  "charts": {
-    "title": "Charts",
-    "placeholder": "Charts arrive in Milestone 8, once real (or simulated) data is flowing."
+  "method": {
+    "title": "How we count",
+    "items": [
+      {
+        "h": "Measured, not modelled",
+        "p": "A low-cost sensor kit reads power, sunlight and wall temperatures every 1–5 minutes. Nothing switches or controls the building."
+      },
+      {
+        "h": "Two walls, one comparison",
+        "p": "One wall is shaded by the modules, the other is bare. The difference between them is the cooling effect."
+      },
+      {
+        "h": "Every factor has a source",
+        "p": "CO₂ uses the UNFCCC grid factor (0.55 t/MWh). Anything we estimate is labelled as an estimate."
+      }
+    ]
   },
+  "ticker": [
+    "Generate power",
+    "Shade the wall",
+    "Cut CO₂",
+    "Measure everything",
+    "Fergana pilot 2026"
+  ],
   "noData": "No data yet",
   "footer": "SolarSkin · Global Sustainability Challenge 2026–27 · Dashboard by Sherif Sumaila"
 }
