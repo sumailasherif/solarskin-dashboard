@@ -12,7 +12,6 @@ import { FaqSection } from './components/FaqSection';
 import { HeroScene } from './components/HeroScene';
 import { LiveSection } from './components/LiveSection';
 import { Marquee } from './components/Marquee';
-import { OrbitBadge } from './components/OrbitBadge';
 import { PhotoCredit } from './components/PhotoCredit';
 import { PhotoStrip } from './components/PhotoStrip';
 import { ReadingsSection } from './components/ReadingsSection';
@@ -53,10 +52,6 @@ export default function App() {
 
           <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="max-w-2xl">
-              <p className="mb-6 inline-flex animate-rise items-center gap-2 rounded-full bg-leaf/15 px-4 py-2 text-xs font-semibold text-leaf-300 ring-1 ring-leaf/30 backdrop-blur">
-                <span aria-hidden className="h-2 w-2 rounded-full bg-leaf" />
-                {t('hero.eyebrow')}
-              </p>
               <h1 className="font-display text-[clamp(2.2rem,6.5vw,5.25rem)] leading-[1.02] font-bold uppercase">
                 <span className="block animate-rise [animation-delay:120ms]">
                   {t('hero.line1')}
@@ -89,11 +84,6 @@ export default function App() {
                 </svg>
               </a>
             </div>
-          </div>
-
-          {/* Spinning badge, bottom left of the building (decoration only, not a link) */}
-          <div className="absolute bottom-8 left-1/2 z-20 hidden -translate-x-1/2 md:block lg:right-auto lg:left-[52%]">
-            <OrbitBadge text={t('hero.orbit')} />
           </div>
         </section>
 
