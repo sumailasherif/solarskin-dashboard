@@ -1,5 +1,5 @@
 // The footer:
-//   left    logo, tagline, pilot location + competition
+//   left    logo + tagline
 //   middle  quick links to the page sections
 //   right   the contact form (sends to CONTACT_EMAIL from content/site.ts)
 //   bottom  copyright + back to top
@@ -19,7 +19,7 @@ export function SiteFooter({ email = CONTACT_EMAIL }: { email?: string }) {
   return (
     <footer id="contact" className="bg-forest-950 px-4 pt-20 pb-8 text-white sm:px-8">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_auto_1.3fr] lg:gap-16">
-        {/* Logo, tagline, where and what */}
+        {/* Logo + tagline */}
         <div>
           <a href="#top" className="inline-flex items-center gap-2.5 font-logo text-2xl uppercase">
             <LogoMark className="h-8 w-9 text-solar" />
@@ -29,8 +29,6 @@ export function SiteFooter({ email = CONTACT_EMAIL }: { email?: string }) {
             </span>
           </a>
           <p className="mt-4 font-serif text-xl text-white/70 italic">{t('site.tagline')}</p>
-          <p className="mt-8 text-sm text-white/50">{t('site.location')}</p>
-          <p className="mt-1 text-sm text-white/50">{t('site.competition')}</p>
         </div>
 
         {/* Quick links */}

@@ -1,17 +1,16 @@
-// The contact form: topic chips, name, email, message, and a thank-you state after sending.
+// The contact form: name, email, message, and a thank-you state after sending.
 // Checking and building the email live in lib/contact.ts (tested there).
 import { useId, useState, type FormEvent, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   buildMailto,
   MESSAGE_MAX,
-  TOPICS,
   validateContact,
   type ContactErrors,
   type ContactValues,
 } from '../lib/contact';
 
-const EMPTY: ContactValues = { name: '', email: '', topic: 'question', message: '' };
+const EMPTY: ContactValues = { name: '', email: '', message: '' };
 
 const INPUT =
   'peer w-full rounded-2xl border bg-white/[0.04] px-4 pt-6 pb-2 text-white outline-none transition placeholder:text-transparent focus:bg-white/[0.07]';
@@ -73,7 +72,7 @@ export function ContactForm({ to }: { to: string }) {
     setErrors(found);
     if (Object.keys(found).length > 0) return;
 
-    window.location.href = buildMailto(to, values, t(`contact.topics.${values.topic}`));
+    window.location.href = buildMailto(to, values);
     setSentBy(values.name.trim());
   };
 
@@ -99,28 +98,6 @@ export function ContactForm({ to }: { to: string }) {
 
   return (
     <form noValidate onSubmit={onSubmit} aria-label={t('contact.title')} className="space-y-4">
-      {/* Topic chips (radio buttons that look like chips) */}
-      <fieldset>
-        <legend className="mb-2 text-sm text-white/60">{t('contact.topic')}</legend>
-        <div className="flex flex-wrap gap-2">
-          {TOPICS.map((topic) => (
-            <label key={topic} className="cursor-pointer">
-              <input
-                type="radio"
-                name="topic"
-                value={topic}
-                checked={values.topic === topic}
-                onChange={() => update('topic')(topic)}
-                className="peer sr-only"
-              />
-              <span className="inline-block rounded-full px-4 py-1.5 text-sm text-white/70 ring-1 ring-white/20 transition peer-checked:bg-solar peer-checked:text-forest-950 peer-checked:ring-solar peer-focus-visible:ring-2 peer-focus-visible:ring-solar hover:text-white">
-                {t(`contact.topics.${topic}`)}
-              </span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label={t('contact.name')} error={errors.name && t(errors.name)}>
           {(props) => (

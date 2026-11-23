@@ -336,20 +336,11 @@
   },
   "site": {
     "tagline": "Cleaner energy, cooler walls, safer planet.",
-    "location": "Pilot: Fergana, Uzbekistan",
-    "competition": "Global Sustainability Challenge 2026–27",
     "explore": "Explore",
     "top": "Back to top"
   },
   "contact": {
     "title": "Say hello.",
-    "topic": "What is it about?",
-    "topics": {
-      "question": "Question",
-      "building": "My building",
-      "partnership": "Partnership",
-      "press": "Press"
-    },
     "name": "Your name",
     "email": "Your email",
     "message": "Message",

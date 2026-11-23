@@ -4,7 +4,6 @@ import { buildMailto, validateContact, type ContactValues } from './contact';
 const GOOD: ContactValues = {
   name: 'Aziza',
   email: 'aziza@example.org',
-  topic: 'building',
   message: 'Can our block in Fergana join the pilot?',
 };
 
@@ -24,16 +23,12 @@ describe('validateContact', () => {
 
 describe('buildMailto', () => {
   it('fills in the subject and body, safely encoded', () => {
-    const url = buildMailto(
-      'team@example.org',
-      { ...GOOD, message: 'Hello & thanks!' },
-      'My building',
-    );
+    const url = buildMailto('team@example.org', { ...GOOD, message: 'Hello & thanks!' });
     const [address, query] = url.split('?');
     const params = new URLSearchParams(query);
 
     expect(address).toBe('mailto:team@example.org');
-    expect(params.get('subject')).toBe('SolarSkin · My building · Aziza');
+    expect(params.get('subject')).toBe('SolarSkin · message from Aziza');
     expect(params.get('body')).toBe('Hello & thanks!\n\n— Aziza (aziza@example.org)');
   });
 });

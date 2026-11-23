@@ -2,10 +2,7 @@
 // The site has no server yet, so sending = opening the visitor's email app with the
 // message already filled in (a "mailto:" link). They just press send there.
 
-export const TOPICS = ['question', 'building', 'partnership', 'press'] as const;
-export type Topic = (typeof TOPICS)[number];
-
-export type ContactValues = { name: string; email: string; topic: Topic; message: string };
+export type ContactValues = { name: string; email: string; message: string };
 export type ContactErrors = Partial<Record<'name' | 'email' | 'message', string>>;
 
 export const MESSAGE_MAX = 1000;
@@ -23,9 +20,9 @@ export function validateContact({ name, email, message }: ContactValues): Contac
 }
 
 /** The mailto: link that opens an email to `to`, with subject and body filled in. */
-export function buildMailto(to: string, values: ContactValues, topicLabel: string) {
+export function buildMailto(to: string, values: ContactValues) {
   const name = values.name.trim();
-  const subject = `SolarSkin · ${topicLabel} · ${name}`;
+  const subject = `SolarSkin · message from ${name}`;
   const body = `${values.message.trim()}\n\n— ${name} (${values.email.trim()})`;
   return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
