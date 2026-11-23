@@ -17,6 +17,7 @@ import { PhotoCredit } from './components/PhotoCredit';
 import { PhotoStrip } from './components/PhotoStrip';
 import { ReadingsSection } from './components/ReadingsSection';
 import { Reveal } from './components/Reveal';
+import { SiteFooter } from './components/SiteFooter';
 import { SiteHeader } from './components/SiteHeader';
 import { SolarPanelBackdrop } from './components/SolarPanelBackdrop';
 import { StorySection } from './components/StorySection';
@@ -213,9 +214,7 @@ export default function App() {
         <FaqSection />
       </main>
 
-      <footer className="bg-forest-950 px-4 py-10 text-center text-xs text-white/50 sm:px-8">
-        <p>{t('footer')}</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

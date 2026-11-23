@@ -333,5 +333,9 @@
         "unit": "A"
       }
     }
+  },
+  "site": {
+    "tagline": "Sunlight, on the record.",
+    "contact": "Get in touch"
   }
 }
