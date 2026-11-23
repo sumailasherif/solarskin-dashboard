@@ -5,4 +5,4 @@
  * Leave it empty ('') and the footer simply hides the contact line.
  * Example: export const CONTACT_EMAIL = 'solarskin.project@gmail.com';
  */
-export const CONTACT_EMAIL: string = '';
+export const CONTACT_EMAIL: string = 'solarskin@gmail.com';
