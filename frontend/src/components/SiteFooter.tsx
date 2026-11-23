@@ -9,7 +9,7 @@ import { ContactForm } from './ContactForm';
 import { LogoMark } from './LogoMark';
 
 // Same sections as the top nav bar
-const LINKS = ['story', 'measure', 'impact', 'method', 'faq'] as const;
+const LINKS = ['story', 'measure', 'impact', 'method', 'team', 'faq'] as const;
 
 /** `email` defaults to CONTACT_EMAIL from content/site.ts (passing it in makes the footer easy to test). */
 export function SiteFooter({ email = CONTACT_EMAIL }: { email?: string }) {

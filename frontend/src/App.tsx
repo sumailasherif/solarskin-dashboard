@@ -1,6 +1,6 @@
 // The whole dashboard page, top to bottom:
 //   header + nav → hero → ticker → story (photos) → live → readings (KPI cards) →
-//   impact numbers → photo strip → sustainability + SDGs → method → FAQ → footer.
+//   impact numbers → photo strip → sustainability + SDGs → method → team → FAQ → footer.
 // SolarSkin's own look: forest greens (sustainability) + solar yellow (energy),
 // Unbounded + Sora fonts, an animated solar-façade skyline, leaf-shaped cards,
 // outlined count-up numbers and sections that rise into view as you scroll.
@@ -22,6 +22,7 @@ import { SiteHeader } from './components/SiteHeader';
 import { SolarPanelBackdrop } from './components/SolarPanelBackdrop';
 import { StorySection } from './components/StorySection';
 import { SustainabilitySection } from './components/SustainabilitySection';
+import { TeamSection } from './components/TeamSection';
 import { PHOTOS, photoSrcSet, photoUrl } from './content/photos';
 
 // The four big planning numbers from the project brief. Each is labelled as an estimate.
@@ -209,6 +210,9 @@ export default function App() {
             </ol>
           </div>
         </section>
+
+        {/* TEAM: the five people behind SolarSkin */}
+        <TeamSection />
 
         {/* 6. FAQ: common questions + a resident checking his wall on his phone */}
         <FaqSection />

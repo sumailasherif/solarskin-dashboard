@@ -9,12 +9,14 @@
     "measure": "Readings",
     "impact": "Impact",
     "method": "Method",
+    "team": "Team",
     "faq": "FAQ",
     "desc": {
       "story": "What SolarSkin is and why walls",
       "measure": "Energy, CO₂, wall cooling and sunlight",
       "impact": "Pilot figures and the UN goals",
       "method": "How the sensors measure",
+      "team": "The people behind SolarSkin",
       "faq": "Answers to common questions"
     }
   },
@@ -221,6 +223,11 @@
       "residentPhone": "Man with a smartphone, Chongqing",
       "almatyBlocks": "Apartment blocks, Almaty"
     }
+  },
+  "team": {
+    "title": "The people behind the wall.",
+    "intro": "Five of us, four countries, one sunny idea.",
+    "lead": "Team lead"
   },
   "faq": {
     "kicker": "FAQ",
