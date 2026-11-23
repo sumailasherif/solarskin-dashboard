@@ -1,9 +1,9 @@
 // "Team": the five people behind SolarSkin, in four countries.
 // Each person gets a tall arch-shaped photo (like a sun rising over a wall), their name
 // in Fraunces Italic, their programme and university, their position on a tag in their
-// own colour, and one sentence on what they own and deliver. The cards are staggered up and down.
+// own colour. Hovering or tapping the position tag slides down their full role. The cards are staggered up and down.
 // The list of people lives in content/team.ts.
-import type { CSSProperties } from 'react';
+import { useId, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { initials, TEAM, type TeamMember } from '../content/team';
 import { Reveal } from './Reveal';
@@ -13,11 +13,13 @@ import { Reveal } from './Reveal';
 const ARCH = 'rounded-t-[50%_37.5%] rounded-b-[2rem]';
 
 /**
- * One person: arch photo (ringed in their colour) + name + credential + position tag + one sentence.
+ * One person: arch photo (ringed in their colour) + name + credential + position tag
+ * (hover/tap the tag to slide down their full role).
  */
 function MemberCard({ member }: { member: TeamMember }) {
   // Their colour, used by the classes below as var(--accent)
   const accent = { '--accent': member.color } as CSSProperties;
+  const detailsId = useId();
 
   return (
     <article style={accent} className="group text-center">
@@ -73,13 +75,42 @@ function MemberCard({ member }: { member: TeamMember }) {
 
       {/* Thin line, then their position on a solid tag in their colour */}
       <span aria-hidden className="mx-auto mt-3 block h-px w-12 bg-forest-950/15" />
-      <p className="mt-3 inline-block rounded-md bg-(--accent) px-3 py-1 text-xs font-semibold text-forest-950">
-        {member.title}
-      </p>
 
-      <p className="mx-auto mt-3 max-w-[15rem] text-sm leading-relaxed text-forest-950/65">
-        {member.about}
-      </p>
+      {/* Hover the tag (or tap / Tab to it) and the full role slides down below it */}
+      <div className="group/role mt-3">
+        <button
+          type="button"
+          aria-describedby={detailsId}
+          className="inline-flex cursor-help items-center gap-1.5 rounded-md bg-(--accent) px-3 py-1 text-xs font-semibold text-forest-950 focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:outline-none"
+        >
+          {member.title}
+          {/* Small arrow that flips when the details are open */}
+          <svg
+            viewBox="0 0 16 16"
+            className="h-3 w-3 shrink-0 transition-transform duration-300 group-focus-within/role:rotate-180 group-hover/role:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <path d="m4 6 4 4 4-4" />
+          </svg>
+        </button>
+
+        {/* The slide-down: this row grows from 0 to its full height (grid rows 0fr → 1fr) */}
+        <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-focus-within/role:grid-rows-[1fr] group-hover/role:grid-rows-[1fr]">
+          <div className="overflow-hidden">
+            <p
+              id={detailsId}
+              className="mx-auto mt-3 max-w-[17rem] -translate-y-2 rounded-2xl border-t-4 border-(--accent) bg-forest-950 px-4 py-3 text-left text-sm leading-relaxed text-white/85 opacity-0 transition duration-500 group-focus-within/role:translate-y-0 group-focus-within/role:opacity-100 group-hover/role:translate-y-0 group-hover/role:opacity-100"
+            >
+              {member.details}
+            </p>
+          </div>
+        </div>
+      </div>
     </article>
   );
 }

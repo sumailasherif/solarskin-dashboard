@@ -168,10 +168,10 @@ export function FaqSection() {
         {/* Right: heading + questions */}
         <div>
           <Reveal>
-            <p className="text-xs font-semibold tracking-widest text-forest-700 uppercase">
+            <p className="font-serif text-4xl text-forest-700 italic sm:text-5xl">
               {t('faq.kicker')}
             </p>
-            <h2 className="mt-4 font-display text-[clamp(2rem,5vw,3.75rem)] leading-none font-bold uppercase">
+            <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.75rem)] leading-none font-bold uppercase">
               {t('faq.title')}
             </h2>
             <p className="mt-5 max-w-xl text-base text-forest-950/70 sm:text-lg">{t('faq.lead')}</p>

@@ -49,19 +49,19 @@ export function SiteFooter({ email = CONTACT_EMAIL }: { email?: string }) {
       <div className="relative mx-auto mt-24 max-w-7xl overflow-hidden py-16 text-center">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-64 max-w-3xl -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(245,184,46,0.16),transparent)]"
+          className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-40 max-w-xl -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(245,184,46,0.16),transparent)]"
         />
         <a
           href="#top"
-          className="relative inline-flex items-center gap-4 font-logo text-5xl tracking-[0.03em] uppercase sm:text-7xl"
+          className="relative inline-flex items-center gap-3 font-logo text-3xl tracking-[0.03em] uppercase sm:text-4xl"
         >
-          <LogoMark className="h-14 w-16 text-solar sm:h-20 sm:w-24" />
+          <LogoMark className="h-8 w-9 text-solar sm:h-10 sm:w-12" />
           <span className="leading-none">
             <span className="font-bold">Solar</span>
             <span className="font-normal text-solar">Skin</span>
           </span>
         </a>
-        <p className="relative mt-6 font-serif text-xl text-white/70 italic sm:text-2xl">
+        <p className="relative mt-4 font-serif text-base text-white/70 italic sm:text-lg">
           {t('site.tagline')}
         </p>
       </div>
