@@ -10,9 +10,9 @@ const PILLARS = ['planet', 'people', 'economy'] as const;
 
 // A real photo on top of each pillar card.
 const PILLAR_PHOTOS = {
-  planet: PHOTOS.solarField,
+  planet: PHOTOS.solarFacade,
   people: PHOTOS.tashkentBalcony,
-  economy: PHOTOS.installer,
+  economy: PHOTOS.almatyBlocks,
 };
 
 // Official SDG numbers and colours (from the UN SDG communication guidelines).
@@ -180,10 +180,6 @@ export function SustainabilitySection() {
             </Reveal>
           ))}
         </div>
-
-        <p className="mt-8 max-w-3xl text-[11px] leading-relaxed text-forest-950/55">
-          {t('sustainability.disclaimer')}
-        </p>
       </div>
     </section>
   );

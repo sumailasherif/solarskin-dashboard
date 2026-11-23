@@ -36,11 +36,6 @@
         "title": "The walls",
         "text": "Rows of apartment blocks with large, sunny walls: plenty of space for solar modules without touching a single roof."
       },
-      "city": {
-        "place": "Fergana, Uzbekistan",
-        "title": "The pilot city",
-        "text": "Fergana sits in a sunny valley in eastern Uzbekistan. The first SolarSkin wall will be measured here."
-      },
       "idea": {
         "place": "Example façade",
         "title": "The idea",
@@ -157,8 +152,7 @@
         "target": "Strengthen resilience and adaptation to climate hazards",
         "tracked": "CO₂ avoided (kg) and wall cooling (°C)"
       }
-    },
-    "disclaimer": "SDG names and colours are used for information only. The content of this page has not been approved by the United Nations and does not reflect the views of the United Nations or its officials or Member States."
+    }
   },
   "measure": {
     "title1": "Measure.",
@@ -214,7 +208,9 @@
   "noData": "No data yet",
   "footer": "SolarSkin © 2026",
   "gallery": {
-    "label": "Photos of buildings, solar panels and Uzbekistan"
+    "label": "Photos of buildings, solar panels and Uzbekistan",
+    "prev": "Previous photos",
+    "next": "Next photos"
   },
   "credits": {
     "button": "Photo credit",
@@ -224,14 +220,12 @@
     "subjects": {
       "tashkentBlocks": "Apartment blocks, Tashkent",
       "solarFacade": "Example solar façade",
-      "ferganaStreet": "Street in Fergana",
       "tashkentBalcony": "Balcony, Tashkent",
       "uzLandscape": "Bostanlik District, Uzbekistan",
       "panelCloseUp": "Solar panel close-up",
-      "solarField": "Solar field",
-      "installer": "Panel installation",
       "sensorKit": "Electronic components",
-      "residentPhone": "Man with a smartphone, Chongqing"
+      "residentPhone": "Man with a smartphone, Chongqing",
+      "almatyBlocks": "Apartment blocks, Almaty"
     }
   },
   "faq": {
@@ -287,5 +281,13 @@
       "shadeTitle": "Shaded wall",
       "shadeValue": "cooler in summer"
     }
+  },
+  "cooling": {
+    "title": "Same sun, cooler wall.",
+    "text": "The panels take the sun, so the wall doesn't. We measure the difference every minute.",
+    "bare": "Bare wall",
+    "skin": "SolarSkin wall",
+    "hotter": "Hotter",
+    "cooler": "Cooler"
   }
 }

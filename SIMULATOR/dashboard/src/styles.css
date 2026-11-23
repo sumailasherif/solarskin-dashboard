@@ -1,0 +1,26 @@
+/* The simulator uses the website's own stylesheet (brand colours, fonts, animations),
+   so every screen looks exactly like SolarSkin. */
+@import '../../../frontend/src/index.css';
+
+/* Tell Tailwind where to look for class names: the simulator AND the website's components */
+@source '../src';
+@source '../../../frontend/src';
+
+@theme {
+  /* Monospace font for the sensor kit's console */
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* A status LED blinking once when the kit sends a reading */
+  --animate-blink: blink 0.6s ease-out both;
+  @keyframes blink {
+    from {
+      background-color: var(--color-solar-300);
+      box-shadow: 0 0 10px 2px var(--color-solar);
+    }
+  }
+}
+
+/* Brushed-aluminium look for the MacBook bodies */
+@utility bg-aluminium {
+  background: linear-gradient(180deg, #e4e6ea 0%, #c9ccd2 45%, #a9adb5 100%);
+}

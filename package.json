@@ -9,12 +9,13 @@
     "shared",
     "backend",
     "frontend",
-    "simulator"
+    "SIMULATOR"
   ],
   "engines": {
     "node": ">=22"
   },
   "scripts": {
+    "simulator": "npm run dev -w SIMULATOR",
     "dev": "concurrently -n api,web -c blue,yellow \"npm run dev -w backend\" \"npm run dev -w frontend\"",
     "lint": "eslint .",
     "format": "prettier --write .",

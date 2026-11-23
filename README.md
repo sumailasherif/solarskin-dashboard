@@ -16,7 +16,7 @@ Work in progress. The milestones are listed in [docs/architecture.md](docs/archi
 backend/     REST API (Node.js + Express + TypeScript)
 frontend/    Dashboard (React + Vite + Tailwind)
 shared/      Code used by more than one package (reading schema, constants)
-simulator/   Generates realistic Fergana sensor data for testing
+SIMULATOR/   Fergana data generator + 3-MacBook test dashboard (sensor · website · home owner)
 firmware/    ESP32 example sketch for the sensor kit
 docs/        Architecture, payload format, hardware bill of materials
 ```
@@ -52,7 +52,4 @@ GitHub Actions runs lint, format check, type-check, tests and build on every pus
 We use free hosted PostgreSQL on [Neon](https://neon.tech), so you don't need to install a database. Create a project there and put its connection string in `.env` as `DATABASE_URL`.
 
 ## Credits
-
-Dashboard by Sherif Sumaila · SolarSkin team (lead: Zafarjon Obidjonov, Fergana State Technical University).
-
 Licensed under the [MIT Licence](LICENSE).

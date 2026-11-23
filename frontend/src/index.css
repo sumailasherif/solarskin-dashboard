@@ -48,6 +48,90 @@
     }
   }
 
+  /* Impact background (components/SolarPanelBackdrop.tsx): panels gliding + a drifting light beam.
+     720px = one module (6 cells × 120px), so the glide loops without a visible jump. */
+  --animate-panel-glide: panel-glide 26s linear infinite;
+  --animate-light-sweep: light-sweep 14s ease-in-out infinite alternate;
+
+  @keyframes panel-glide {
+    to {
+      transform: translate3d(0, 720px, 0);
+    }
+  }
+  /* Cooling demo (components/CoolingDemo.tsx): heat rising off the bare wall, a warm glow
+     pulsing on it, and the two thermometers moving (hot one high, cool one low). */
+  --animate-heat-rise: heat-rise 3s ease-out infinite;
+  --animate-warm-pulse: warm-pulse 3s ease-in-out infinite;
+  --animate-thermo-hot: thermo-hot 4s ease-in-out infinite alternate;
+  --animate-thermo-cool: thermo-cool 4s ease-in-out infinite alternate;
+
+  @keyframes heat-rise {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-46px);
+    }
+  }
+  @keyframes warm-pulse {
+    50% {
+      opacity: 0.5;
+    }
+  }
+  @keyframes thermo-hot {
+    from {
+      transform: scaleY(0.8);
+    }
+  }
+  @keyframes thermo-cool {
+    from {
+      transform: scaleY(0.85);
+    }
+  }
+
+  /* Energy current: draws itself quickly, flickers, then disappears; repeats every 7s */
+  --animate-bolt: bolt 7s ease-out infinite;
+
+  @keyframes bolt {
+    0% {
+      stroke-dashoffset: 100;
+      opacity: 0;
+    }
+    2% {
+      opacity: 1;
+    }
+    9% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    11% {
+      opacity: 0.35;
+    }
+    13% {
+      opacity: 1;
+    }
+    20%,
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+  }
+  @keyframes light-sweep {
+    from {
+      transform: translate(-85%, 0) scale(0.9);
+      opacity: 0.7;
+    }
+    to {
+      transform: translate(-15%, 6%) scale(1.1);
+      opacity: 1;
+    }
+  }
+
   /* Hero badge "mini video": energy lines running across the panels, and a slow camera drift */
   --animate-flow: flow 2.6s linear infinite;
   --animate-drift-zoom: drift-zoom 14s ease-in-out infinite alternate;
@@ -163,6 +247,43 @@ body {
     linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
   background-size: 44px 44px;
+}
+
+/* A surface of solar panels, drawn with layered CSS patterns (used by SolarPanelBackdrop).
+   Each cell is 120px; 6 × 6 cells make one module (720px), with a dark gap between modules.
+   Layers, top to bottom:
+     1–2. dark gaps between modules (every 720px, across and down)
+     3.   bright dots where the cell lines cross
+     4–5. thin silver lines between cells
+     6.   very fine lines inside each cell (the "fingers" that collect the current)
+     7.   the dark blue-black colour of the cells */
+@utility bg-solar-cells {
+  background-color: #07100e;
+  background-image:
+    linear-gradient(to right, #020604 0 10px, transparent 10px),
+    linear-gradient(to bottom, #020604 0 10px, transparent 10px),
+    radial-gradient(circle, rgb(235 245 255 / 0.9) 0 2.2px, transparent 3.4px),
+    linear-gradient(to right, rgb(200 215 225 / 0.4) 0 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgb(200 215 225 / 0.4) 0 1.5px, transparent 1.5px),
+    repeating-linear-gradient(to bottom, rgb(255 255 255 / 0.045) 0 1px, transparent 1px 10px),
+    linear-gradient(135deg, #0e1c22, #060d10);
+  background-size:
+    720px 720px,
+    720px 720px,
+    120px 120px,
+    120px 120px,
+    120px 120px,
+    auto,
+    auto;
+  /* shift the dots by half a cell so they sit exactly on the line crossings */
+  background-position:
+    0 0,
+    0 0,
+    -60px -60px,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
 }
 
 /* Respect people who turn animations off in their system settings. */

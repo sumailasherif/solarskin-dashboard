@@ -7,6 +7,7 @@
 // Live values are null until the API exists (Milestone 7). We show "No data yet"
 // rather than fake numbers.
 import { useTranslation } from 'react-i18next';
+import { CoolingDemo } from './components/CoolingDemo';
 import { CountUp } from './components/CountUp';
 import { FaqSection } from './components/FaqSection';
 import { HeroScene } from './components/HeroScene';
@@ -18,6 +19,7 @@ import { PhotoCredit } from './components/PhotoCredit';
 import { PhotoStrip } from './components/PhotoStrip';
 import { Reveal } from './components/Reveal';
 import { SiteHeader } from './components/SiteHeader';
+import { SolarPanelBackdrop } from './components/SolarPanelBackdrop';
 import { StorySection } from './components/StorySection';
 import { SustainabilitySection } from './components/SustainabilitySection';
 import { PHOTOS, photoSrcSet, photoUrl } from './content/photos';
@@ -139,6 +141,9 @@ export default function App() {
                 </Reveal>
               ))}
             </div>
+
+            {/* How the wall cooling works: two walls under the same sun */}
+            <CoolingDemo />
           </div>
         </section>
 
@@ -147,18 +152,8 @@ export default function App() {
           id="impact"
           className="relative overflow-hidden bg-forest-950 px-4 py-24 sm:px-8 sm:py-32"
         >
-          {/* Real photo of solar cells behind the numbers, darkened so the text stays readable */}
-          <img
-            src={photoUrl(PHOTOS.panelCloseUp, 1600)}
-            srcSet={photoSrcSet(PHOTOS.panelCloseUp)}
-            sizes="100vw"
-            alt=""
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-forest-950 via-forest-950/80 to-forest-950" />
-          <PhotoCredit photo={PHOTOS.panelCloseUp} />
+          {/* Animated solar panels behind the numbers (drawn in CSS, no video file) */}
+          <SolarPanelBackdrop />
 
           <div className="relative mx-auto max-w-7xl">
             <Reveal>

@@ -17,13 +17,13 @@ export default tseslint.config(
 
   // Node.js code (backend, simulator, shared, config files)
   {
-    files: ['backend/**/*.ts', 'simulator/**/*.ts', 'shared/**/*.ts', '*.js'],
+    files: ['backend/**/*.ts', 'SIMULATOR/src/**/*.ts', 'shared/**/*.ts', '*.js'],
     languageOptions: { globals: globals.node },
   },
 
-  // React code (frontend)
+  // React code (frontend + the simulator's visual dashboard)
   {
-    files: ['frontend/**/*.{ts,tsx}'],
+    files: ['frontend/**/*.{ts,tsx}', 'SIMULATOR/dashboard/**/*.{ts,tsx}'],
     languageOptions: { globals: globals.browser },
     plugins: { 'react-hooks': reactHooks, 'react-refresh': reactRefresh },
     rules: {

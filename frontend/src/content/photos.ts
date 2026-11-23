@@ -21,12 +21,6 @@ export const PHOTOS = {
     photographer: 'Salohiddin Kamolov',
     page: 'https://unsplash.com/photos/XM9svSm7u9I',
   },
-  ferganaStreet: {
-    id: 'photo-1654792171381-05d309da048b',
-    alt: 'A sunny, tree-lined street with green grass in Fergana, Uzbekistan',
-    photographer: 'Muhammadqodir Abdubannobov',
-    page: 'https://unsplash.com/photos/YIEwRW6-SGc',
-  },
   solarFacade: {
     id: 'photo-1764885518069-84608997f900',
     alt: 'A modern building façade with solar panels built into the wall',
@@ -39,23 +33,11 @@ export const PHOTOS = {
     photographer: 'Michael Pointner',
     page: 'https://unsplash.com/photos/ZGzMr04QdmU',
   },
-  solarField: {
-    id: 'photo-1509391366360-2e959784a276',
-    alt: 'Rows of solar panels on green grass under a blue sky with white clouds',
-    photographer: 'American Public Power Association',
-    page: 'https://unsplash.com/photos/513dBrMJ_5w',
-  },
   tashkentBalcony: {
     id: 'photo-1765078455481-b3ad54b00b63',
     alt: 'An apartment balcony in Tashkent with colourful laundry drying in the sun',
     photographer: 'Far Chinberdiev',
     page: 'https://unsplash.com/photos/8PlMRWCye8o',
-  },
-  installer: {
-    id: 'photo-1668097613572-40b7c11c8727',
-    alt: 'A technician in gloves fixing a solar panel in place with a drill',
-    photographer: 'Markus Spiske',
-    page: 'https://unsplash.com/photos/rNn_TU8dvoY',
   },
   uzLandscape: {
     id: 'photo-1682432196414-932bbe699907',
@@ -74,6 +56,13 @@ export const PHOTOS = {
     alt: 'A smiling young man with glasses and a backpack holding his smartphone on a busy city street',
     photographer: 'Fenghua',
     page: 'https://unsplash.com/photos/pP0lLmWMy-Q',
+  },
+  // Central Asian / Soviet-era apartment blocks: the walls SolarSkin is made for
+  almatyBlocks: {
+    id: 'photo-1770053472486-d766458a2dd0',
+    alt: 'Tall Soviet-era apartment blocks in Almaty, Kazakhstan, against a blue sky',
+    photographer: 'Muhammet Cengiz',
+    page: 'https://unsplash.com/photos/mhlZMMfGXLE',
   },
 } satisfies Record<string, Photo>;
 

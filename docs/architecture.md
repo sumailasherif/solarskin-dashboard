@@ -41,7 +41,7 @@ The plan agreed in Milestone 1 (22 Nov 2026).
 /backend     Express API: routes/, impact/, db/, auth/, config/
 /frontend    React dashboard (locales/en.json; uz and ru later)
 /shared      zod reading schema + types used by backend and simulator
-/simulator   Fergana data generator → POST /ingest
+/SIMULATOR   Fergana data generator → POST /ingest, plus the visual test dashboard
 /firmware    ESP32 Arduino sketch
 /docs        architecture, payload format, hardware BOM, methodology
 ```
