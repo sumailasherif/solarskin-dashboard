@@ -29,7 +29,6 @@
     "orbit": "Power from walls · Shade for homes · "
   },
   "story": {
-    "kicker": "Why walls?",
     "title": "Walls that work for the city",
     "lead": "Apartment blocks across Central Asia have big walls that face the sun all day. Today those walls soak up summer heat and make no energy. SolarSkin turns them into small power plants that also shade the building.",
     "cards": {
@@ -225,9 +224,8 @@
     }
   },
   "team": {
-    "title": "The people behind the wall.",
-    "intro": "Five of us, four countries, one sunny idea.",
-    "lead": "Team lead"
+    "title": "Meet The Team",
+    "intro": "Five members in four countries, covering solar engineering, electronics, data, cost and storytelling."
   },
   "faq": {
     "kicker": "FAQ",

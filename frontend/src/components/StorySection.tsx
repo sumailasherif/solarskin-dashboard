@@ -55,10 +55,7 @@ export function StorySection() {
     <section id="story" className="bg-forest-950 px-4 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-3xl">
-          <p className="text-xs font-semibold tracking-widest text-leaf uppercase">
-            {t('story.kicker')}
-          </p>
-          <h2 className="mt-4 font-display text-[clamp(1.9rem,5vw,4rem)] leading-[1.05] font-bold uppercase">
+          <h2 className="font-display text-[clamp(1.9rem,5vw,4rem)] leading-[1.05] font-bold uppercase">
             {t('story.title')}
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">

@@ -1,7 +1,7 @@
 // "Team": the five people behind SolarSkin, in four countries.
 // Each person gets a tall arch-shaped photo (like a sun rising over a wall), their name
-// in Fraunces Italic, their position on a tag in their own colour, and one short sentence
-// on what they do. The cards are staggered up and down.
+// in Fraunces Italic, their programme and university, their position on a tag in their
+// own colour, and one sentence on what they own and deliver. The cards are staggered up and down.
 // The list of people lives in content/team.ts.
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,10 +13,9 @@ import { Reveal } from './Reveal';
 const ARCH = 'rounded-t-[50%_37.5%] rounded-b-[2rem]';
 
 /**
- * One person: arch photo (ringed in their colour) + name + position tag + one sentence.
+ * One person: arch photo (ringed in their colour) + name + credential + position tag + one sentence.
  */
 function MemberCard({ member }: { member: TeamMember }) {
-  const { t } = useTranslation();
   // Their colour, used by the classes below as var(--accent)
   const accent = { '--accent': member.color } as CSSProperties;
 
@@ -67,14 +66,10 @@ function MemberCard({ member }: { member: TeamMember }) {
         </div>
       </div>
 
-      {member.lead && (
-        <p className="mt-5 inline-block rounded-full bg-forest-950 px-3 py-1 text-xs font-semibold text-solar">
-          {t('team.lead')}
-        </p>
-      )}
-      <h3 className={`${member.lead ? 'mt-2' : 'mt-5'} font-serif text-2xl leading-tight italic`}>
-        {member.name}
-      </h3>
+      <h3 className="mt-5 font-serif text-2xl leading-tight italic">{member.name}</h3>
+      <p className="mx-auto mt-1.5 max-w-[16rem] text-xs leading-snug text-balance text-forest-950/50">
+        {member.credential}
+      </p>
 
       {/* Thin line, then their position on a solid tag in their colour */}
       <span aria-hidden className="mx-auto mt-3 block h-px w-12 bg-forest-950/15" />
