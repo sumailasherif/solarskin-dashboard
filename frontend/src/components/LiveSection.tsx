@@ -1,4 +1,4 @@
-// "One day, one wall": a giant Fergana clock, today's sun path, the current power,
+// "Watch the wall work.": a giant Fergana clock, today's sun path, the current power,
 // range chips and a chart.
 // The clock and sun path are real (time + astronomy). The power and chart stay empty
 // until the API sends real readings (Milestone 7–8). We never draw a fake line.

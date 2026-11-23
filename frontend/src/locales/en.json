@@ -20,11 +20,11 @@
   },
   "hero": {
     "eyebrow": "Façade solar pilot · Fergana, Uzbekistan",
-    "line1": "Sunlight,",
-    "line2": "on the record.",
+    "line1": "Sunny walls,",
+    "line2": "clean power.",
     "lead": "Solar modules on the walls of apartment blocks. Every watt they make and every degree they keep off the wall, measured.",
     "cta": "See the live wall",
-    "orbit": "Fergana pilot · One reading every minute · "
+    "orbit": "Power from walls · Shade for homes · "
   },
   "story": {
     "kicker": "Why walls?",
@@ -44,7 +44,7 @@
     }
   },
   "live": {
-    "title": "One day, one wall",
+    "title": "Watch the wall work.",
     "from": "Live from Fergana",
     "localTime": "Local time · Uzbekistan · Asia/Tashkent (GMT+5)",
     "power": "Power right now",
@@ -198,13 +198,7 @@
     ],
     "photoCaption": "The kind of low-cost, off-the-shelf parts our sensor kit is built from"
   },
-  "ticker": [
-    "Generate power",
-    "Shade the wall",
-    "Cut CO₂",
-    "Measure everything",
-    "Fergana pilot 2026"
-  ],
+  "ticker": ["Generate power", "Shade the wall", "Cut CO₂", "Measure everything", "Clean energy"],
   "noData": "No data yet",
   "footer": "SolarSkin © 2026",
   "gallery": {
@@ -247,24 +241,12 @@
         "a": "Our planning estimate for the 10 kWp pilot wall is about 8,000 kWh a year (800 kWh per kWp). Once the sensor kit is running, this dashboard will show the measured figure instead."
       },
       {
-        "q": "How will residents see the results?",
-        "a": "On this dashboard, from any phone or computer. It shows the power right now, the energy generated, the CO₂ avoided and how much cooler the shaded wall is, in plain language."
-      },
-      {
         "q": "How do you know the wall is cooler?",
         "a": "We measure two walls: one shaded by the modules and an identical bare one on the same building. Temperature sensors on both show the difference every minute."
       },
       {
-        "q": "How is the CO₂ saving calculated?",
-        "a": "Electricity generated (kWh) × Uzbekistan's grid emission factor of 0.55 t CO₂ per MWh (UNFCCC CDM standardised baseline ASB0003). We also show a lower value of 0.47 t/MWh as a sensitivity check."
-      },
-      {
         "q": "Can the system control anything in the building?",
         "a": "No. It is monitoring only: the sensor kit takes measurements and never switches or controls any equipment."
-      },
-      {
-        "q": "How often is data recorded?",
-        "a": "Every minute. If the WiFi connection drops, the kit stores its readings and uploads them later, so no data is lost."
       },
       {
         "q": "Is the pilot installed yet?",
@@ -336,8 +318,8 @@
   },
   "site": {
     "tagline": "Cleaner energy, cooler walls, safer planet.",
-    "explore": "Explore",
-    "top": "Back to top"
+    "top": "Back to top",
+    "quickLinks": "Quick links"
   },
   "contact": {
     "title": "Say hello.",
@@ -345,7 +327,6 @@
     "email": "Your email",
     "message": "Message",
     "send": "Send",
-    "privacy": "We only use your details to reply.",
     "thanks": "Thanks, {{name}}.",
     "opened": "Your email app is opening with your message. Just press send.",
     "again": "Write another message",

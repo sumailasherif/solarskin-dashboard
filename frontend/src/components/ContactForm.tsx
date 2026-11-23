@@ -147,9 +147,7 @@ export function ContactForm({ to }: { to: string }) {
         )}
       </Field>
 
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <p className="text-xs text-white/45">{t('contact.privacy')}</p>
-
+      <div className="flex justify-end">
         {/* Same slide-up panel as the "See the live wall" button */}
         <button
           type="submit"

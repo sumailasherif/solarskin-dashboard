@@ -142,10 +142,10 @@ export function FaqSection() {
   return (
     <section id="faq" className="bg-forest-50 px-4 py-24 text-forest-950 sm:px-8 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        {/* Left: photo with pop-up notifications (stays in view while you read the questions) */}
-        <Reveal className="lg:sticky lg:top-28 lg:self-start">
-          <figure>
-            <div className="relative overflow-hidden rounded-tl-[3rem] rounded-tr-xl rounded-br-[3rem] rounded-bl-xl shadow-xl">
+        {/* Left: photo with pop-up notifications. On laptops it stretches to the height of the questions */}
+        <Reveal className="lg:flex lg:flex-col">
+          <figure className="lg:flex lg:flex-1 lg:flex-col">
+            <div className="relative overflow-hidden rounded-tl-[3rem] rounded-tr-xl rounded-br-[3rem] rounded-bl-xl shadow-xl lg:flex-1">
               <img
                 src={photoUrl(photo, 1080)}
                 srcSet={photoSrcSet(photo)}
@@ -153,7 +153,7 @@ export function FaqSection() {
                 alt={photo.alt}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[4/5] w-full object-cover object-[40%_center] md:aspect-[4/3] lg:aspect-[4/5]"
+                className="aspect-[4/5] w-full object-cover object-[40%_center] md:aspect-[4/3] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
               />
               <PhonePopups />
               <PhotoCredit photo={photo} corner="top" />

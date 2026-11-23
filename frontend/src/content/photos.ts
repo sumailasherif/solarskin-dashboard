@@ -57,10 +57,10 @@ export const PHOTOS = {
     photographer: 'Fenghua',
     page: 'https://unsplash.com/photos/pP0lLmWMy-Q',
   },
-  // Central Asian / Soviet-era apartment blocks: the walls SolarSkin is made for
+  // Central Asian apartment blocks: the walls SolarSkin is made for
   almatyBlocks: {
     id: 'photo-1770053472486-d766458a2dd0',
-    alt: 'Tall Soviet-era apartment blocks in Almaty, Kazakhstan, against a blue sky',
+    alt: 'Tall apartment blocks in Almaty, Kazakhstan, against a blue sky',
     photographer: 'Muhammet Cengiz',
     page: 'https://unsplash.com/photos/mhlZMMfGXLE',
   },

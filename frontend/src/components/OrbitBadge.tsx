@@ -8,11 +8,12 @@ import { PHOTOS, photoUrl } from '../content/photos';
 
 type OrbitBadgeProps = { text: string };
 
-// The energy lines: gentle curves rising across the panels (drawn in a 100 × 100 box).
+// The energy lines: gentle curves FALLING from the top down onto the panels, like sunlight
+// arriving (drawn in a 100 × 100 box). Each path starts at the top, so the moving dash travels downwards.
 const STREAKS = [
-  { d: 'M-5 78 C20 74 40 62 62 48 S90 22 105 12', delay: '0s' },
-  { d: 'M-5 98 C25 92 48 84 70 70 S95 48 105 40', delay: '0.9s' },
-  { d: 'M-5 52 C15 50 30 40 48 28 S72 4 90 -5', delay: '1.7s' },
+  { d: 'M105 -8 C85 15 68 32 50 50 S18 85 -5 108', delay: '0s' },
+  { d: 'M75 -8 C62 18 50 36 36 56 S12 90 -5 100', delay: '0.9s' },
+  { d: 'M112 30 C95 45 80 58 64 72 S38 98 20 112', delay: '1.7s' },
 ];
 
 export function OrbitBadge({ text }: OrbitBadgeProps) {
