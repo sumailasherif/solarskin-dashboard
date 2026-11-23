@@ -269,9 +269,7 @@ function LiveReadings({ state }: { state: SimState }) {
                   ––<span className="ml-3 font-sans text-xl font-semibold">{t('live.unit')}</span>
                 </p>
                 <p className="mt-3 max-w-md text-sm text-white/70">
-                  {latest
-                    ? `Last reading at ${clock(Date.parse(latest.ts))}.`
-                    : t('live.waiting')}
+                  {latest ? `Last reading at ${clock(Date.parse(latest.ts))}.` : t('live.waiting')}
                 </p>
               </>
             )}
@@ -409,7 +407,10 @@ function MeasuredImpact({ state }: { state: SimState }) {
   ];
 
   return (
-    <section id="impact" className="relative overflow-hidden bg-forest-950 px-4 py-24 sm:px-8 sm:py-32">
+    <section
+      id="impact"
+      className="relative overflow-hidden bg-forest-950 px-4 py-24 sm:px-8 sm:py-32"
+    >
       <SolarPanelBackdrop />
       <div className="relative mx-auto max-w-7xl">
         <Reveal>
@@ -419,7 +420,11 @@ function MeasuredImpact({ state }: { state: SimState }) {
         </Reveal>
         <div className="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
           {items.map((item, i) => (
-            <Reveal key={item.unit} delayMs={(i % 2) * 150} className="border-t border-white/15 pt-8">
+            <Reveal
+              key={item.unit}
+              delayMs={(i % 2) * 150}
+              className="border-t border-white/15 pt-8"
+            >
               <p className="flex flex-wrap items-baseline gap-x-4">
                 <CountUp
                   value={item.value}

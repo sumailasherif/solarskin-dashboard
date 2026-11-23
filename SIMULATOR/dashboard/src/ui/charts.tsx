@@ -222,7 +222,10 @@ export function Sparkline({ values, className = '' }: { values: number[]; classN
   const max = Math.max(...values);
   const span = max - min || 1;
   const pts = values
-    .map((v, i) => `${((i / (values.length - 1)) * 100).toFixed(1)},${(28 - ((v - min) / span) * 26).toFixed(1)}`)
+    .map(
+      (v, i) =>
+        `${((i / (values.length - 1)) * 100).toFixed(1)},${(28 - ((v - min) / span) * 26).toFixed(1)}`,
+    )
     .join(' ');
   return (
     <svg viewBox="0 0 100 30" preserveAspectRatio="none" className={className} aria-hidden>

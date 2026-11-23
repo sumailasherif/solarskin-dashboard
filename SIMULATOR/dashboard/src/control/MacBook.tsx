@@ -50,7 +50,10 @@ export function MacBook({ src, url, label, caption, clockText }: MacBookProps) {
 
       {/* Lid: black bezel around the display */}
       <div className="mx-auto w-[88%] rounded-t-[1.1rem] bg-[#0c0c0e] p-[1.3%] pb-[2%] shadow-[0_30px_60px_-25px_rgb(0_0_0/0.9)] ring-1 ring-[#4a4d55]">
-        <div ref={screenRef} className="relative aspect-[16/10] overflow-hidden rounded-[3px] bg-black">
+        <div
+          ref={screenRef}
+          className="relative aspect-[16/10] overflow-hidden rounded-[3px] bg-black"
+        >
           <div
             className="absolute top-0 left-0 flex flex-col"
             style={{ width: VW, height: VH, transform: `scale(${scale})`, transformOrigin: '0 0' }}
@@ -61,7 +64,10 @@ export function MacBook({ src, url, label, caption, clockText }: MacBookProps) {
           </div>
           {/* The notch with the camera */}
           <div className="absolute top-0 left-1/2 flex h-[3.2%] w-[12%] -translate-x-1/2 items-center justify-center rounded-b-[6px] bg-[#0c0c0e]">
-            <span className="h-[40%] w-auto rounded-full bg-[#1d2430] ring-1 ring-[#2c3442]" style={{ aspectRatio: 1 }} />
+            <span
+              className="h-[40%] w-auto rounded-full bg-[#1d2430] ring-1 ring-[#2c3442]"
+              style={{ aspectRatio: 1 }}
+            />
           </div>
         </div>
       </div>

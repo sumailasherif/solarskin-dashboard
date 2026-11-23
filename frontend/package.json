@@ -12,6 +12,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@solarskin/simulator": "^0.1.0",
     "i18next": "^27.2.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",

@@ -143,9 +143,8 @@ export function OwnerScreen({ state }: { state: SimState }) {
                 </p>
               )}
               <p className="mt-6 text-sm text-white/70">
-                Today so far:{' '}
-                <strong className="text-white">{num(today.energyKwh, 1)} kWh</strong> of clean
-                electricity
+                Today so far: <strong className="text-white">{num(today.energyKwh, 1)} kWh</strong>{' '}
+                of clean electricity
               </p>
             </div>
           </div>
@@ -166,7 +165,11 @@ export function OwnerScreen({ state }: { state: SimState }) {
             />
             <Tile
               label="Wall cooler by"
-              value={today.coolingNow !== null && today.coolingNow >= 0.5 ? num(today.coolingNow, 1) : '–'}
+              value={
+                today.coolingNow !== null && today.coolingNow >= 0.5
+                  ? num(today.coolingNow, 1)
+                  : '–'
+              }
               unit="°C"
               note={
                 today.coolingNow !== null && today.coolingNow >= 0.5
@@ -242,7 +245,9 @@ export function OwnerScreen({ state }: { state: SimState }) {
                   .slice(0, 8)
                   .map((e) => (
                     <li key={e.id} className="flex items-start gap-4 py-3">
-                      <span className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${TONE[e.tone].dot}`} />
+                      <span
+                        className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${TONE[e.tone].dot}`}
+                      />
                       <div className="flex-1">
                         <p className="text-sm font-semibold">{e.title}</p>
                         <p className="text-sm text-forest-950/60">{e.text}</p>
@@ -318,13 +323,23 @@ function Tile({
 }
 
 /** A horizontal "thermometer" bar from -10 °C to 60 °C. */
-function Thermo({ label, value, hot = false }: { label: string; value: number | null; hot?: boolean }) {
+function Thermo({
+  label,
+  value,
+  hot = false,
+}: {
+  label: string;
+  value: number | null;
+  hot?: boolean;
+}) {
   const pct = value === null ? 0 : Math.min(100, Math.max(2, ((value + 10) / 70) * 100));
   return (
     <div>
       <p className="flex justify-between text-sm">
         <span>{label}</span>
-        <span className="font-semibold tabular-nums">{value === null ? '–' : `${num(value, 1)} °C`}</span>
+        <span className="font-semibold tabular-nums">
+          {value === null ? '–' : `${num(value, 1)} °C`}
+        </span>
       </p>
       <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-forest-950/10">
         <div

@@ -158,7 +158,7 @@
     "title1": "Measure.",
     "title2": "Prove.",
     "title3": "Scale.",
-    "lead": "Four numbers, straight from the wall. We show nothing we didn't measure."
+    "lead": "Straight from the wall, every minute."
   },
   "kpi": {
     "energy": {
@@ -289,5 +289,49 @@
     "skin": "SolarSkin wall",
     "hotter": "Hotter",
     "cooler": "Cooler"
+  },
+  "readings": {
+    "title": "The wall, right now.",
+    "waiting": "Waiting for the sensor kit",
+    "simulatedAt": "Simulated · {{time}} Fergana",
+    "simulated": "Simulated",
+    "demo": "Simulated demo",
+    "more": "More readings",
+    "less": "Fewer readings",
+    "diagram": "Side view of the wall: the solar module in front, and where each sensor sits",
+    "tiles": {
+      "powerW": {
+        "label": "PV power",
+        "unit": "kW"
+      },
+      "irradiance": {
+        "label": "Sunlight",
+        "unit": "W/m²"
+      },
+      "panel": {
+        "label": "Panel",
+        "unit": "°C"
+      },
+      "wallShaded": {
+        "label": "Shaded wall",
+        "unit": "°C"
+      },
+      "wallReference": {
+        "label": "Bare wall",
+        "unit": "°C"
+      },
+      "ambient": {
+        "label": "Air",
+        "unit": "°C"
+      },
+      "voltageV": {
+        "label": "DC voltage",
+        "unit": "V"
+      },
+      "currentA": {
+        "label": "DC current",
+        "unit": "A"
+      }
+    }
   }
 }

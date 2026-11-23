@@ -18,8 +18,8 @@ export function ScreenShell({ children }: { children: (state: SimState) => React
         <div>
           <p className="font-display text-2xl">Waiting for the simulator…</p>
           <p className="mt-3 text-sm text-white/60">
-            Keep the control room page (SolarSkin Simulator) open in another tab. This screen
-            fills in as soon as it starts.
+            Keep the control room page (SolarSkin Simulator) open in another tab. This screen fills
+            in as soon as it starts.
           </p>
         </div>
       </div>

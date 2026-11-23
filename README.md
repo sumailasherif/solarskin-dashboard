@@ -52,4 +52,5 @@ GitHub Actions runs lint, format check, type-check, tests and build on every pus
 We use free hosted PostgreSQL on [Neon](https://neon.tech), so you don't need to install a database. Create a project there and put its connection string in `.env` as `DATABASE_URL`.
 
 ## Credits
+
 Licensed under the [MIT Licence](LICENSE).

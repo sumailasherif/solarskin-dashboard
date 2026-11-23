@@ -7,16 +7,15 @@
 // Live values are null until the API exists (Milestone 7). We show "No data yet"
 // rather than fake numbers.
 import { useTranslation } from 'react-i18next';
-import { CoolingDemo } from './components/CoolingDemo';
 import { CountUp } from './components/CountUp';
 import { FaqSection } from './components/FaqSection';
 import { HeroScene } from './components/HeroScene';
-import { KpiCard } from './components/KpiCard';
 import { LiveSection } from './components/LiveSection';
 import { Marquee } from './components/Marquee';
 import { OrbitBadge } from './components/OrbitBadge';
 import { PhotoCredit } from './components/PhotoCredit';
 import { PhotoStrip } from './components/PhotoStrip';
+import { ReadingsSection } from './components/ReadingsSection';
 import { Reveal } from './components/Reveal';
 import { SiteHeader } from './components/SiteHeader';
 import { SolarPanelBackdrop } from './components/SolarPanelBackdrop';
@@ -27,19 +26,10 @@ import { PHOTOS, photoSrcSet, photoUrl } from './content/photos';
 // The four big planning numbers from the project brief. Each is labelled as an estimate.
 const IMPACT = ['size', 'yield', 'factor', 'scale'] as const;
 
-// The four live KPI cards. `note` = an optional key for a small explanation line.
-const KPIS = [
-  { key: 'energy', note: false },
-  { key: 'co2', note: true },
-  { key: 'cooling', note: true },
-  { key: 'irradiance', note: false },
-] as const;
-
 type MethodItem = { h: string; p: string };
 
 export default function App() {
   const { t } = useTranslation();
-  const noData = t('noData');
   const methodItems = t('method.items', { returnObjects: true }) as MethodItem[];
   const ticker = t('ticker', { returnObjects: true }) as string[];
 
@@ -114,38 +104,8 @@ export default function App() {
         {/* 2. LIVE: clock, sun path, range chips, chart */}
         <LiveSection />
 
-        {/* 3. READINGS: solid yellow section with the four sensor KPI cards (right after the live chart) */}
-        <section id="measure" className="bg-solar px-4 py-24 text-forest-950 sm:px-8 sm:py-32">
-          <div className="mx-auto max-w-7xl">
-            <Reveal>
-              <h2 className="text-center font-display text-[clamp(2.2rem,7.5vw,6rem)] leading-[1.02] font-bold uppercase">
-                {t('measure.title1')} {t('measure.title2')}
-                <br />
-                {t('measure.title3')}
-              </h2>
-              <p className="mx-auto mt-6 max-w-md text-center text-base">{t('measure.lead')}</p>
-            </Reveal>
-
-            {/* 1 column on phones, 2 on tablets, 4 on desktops */}
-            <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {KPIS.map(({ key, note }, i) => (
-                <Reveal key={key} delayMs={i * 120}>
-                  <KpiCard
-                    index={`0${i + 1}`}
-                    label={t(`kpi.${key}.label`)}
-                    value={null}
-                    unit={t(`kpi.${key}.unit`)}
-                    note={note ? t(`kpi.${key}.note`) : undefined}
-                    noDataText={noData}
-                  />
-                </Reveal>
-              ))}
-            </div>
-
-            {/* How the wall cooling works: two walls under the same sun */}
-            <CoolingDemo />
-          </div>
-        </section>
+        {/* 3. READINGS: live sensors (with a simulated demo switch), today's totals, cooling */}
+        <ReadingsSection />
 
         {/* 4. IMPACT: giant gradient numbers from the plan that count up, each labelled as an estimate */}
         <section

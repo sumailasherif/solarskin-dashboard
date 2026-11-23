@@ -25,7 +25,13 @@ const TILES: Tile[] = [
     part: 'Reference cell, in the module plane',
     decimals: 0,
   },
-  { key: 'panel_temp_c', label: 'Module temp', unit: '°C', part: 'Probe on module back', decimals: 1 },
+  {
+    key: 'panel_temp_c',
+    label: 'Module temp',
+    unit: '°C',
+    part: 'Probe on module back',
+    decimals: 1,
+  },
   {
     key: 'wall_temp_shaded_c',
     label: 'Wall · shaded',
@@ -40,7 +46,13 @@ const TILES: Tile[] = [
     part: 'Probe on bare wall',
     decimals: 1,
   },
-  { key: 'ambient_temp_c', label: 'Air temp', unit: '°C', part: 'Probe in shade shield', decimals: 1 },
+  {
+    key: 'ambient_temp_c',
+    label: 'Air temp',
+    unit: '°C',
+    part: 'Probe in shade shield',
+    decimals: 1,
+  },
   { key: 'voltage_v', label: 'DC voltage', unit: 'V', part: 'DC power meter', decimals: 1 },
   { key: 'current_a', label: 'DC current', unit: 'A', part: 'DC power meter', decimals: 2 },
 ];
@@ -64,7 +76,12 @@ export function SensorScreen({ state }: { state: SimState }) {
     return (
       <div className="grid min-h-screen place-items-center bg-[#202124] p-10 font-sans text-[#bdc1c6]">
         <div className="max-w-xl">
-          <svg viewBox="0 0 24 24" className="h-14 w-14 text-[#9aa0a6]" fill="currentColor" aria-hidden>
+          <svg
+            viewBox="0 0 24 24"
+            className="h-14 w-14 text-[#9aa0a6]"
+            fill="currentColor"
+            aria-hidden
+          >
             <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 14H4V8h16v10ZM9 10l-2 2 2 2-1 1-3-3 3-3 1 1Zm6 0 1-1 3 3-3 3-1-1 2-2-2-2Z" />
           </svg>
           <h1 className="mt-6 text-2xl text-[#e8eaed]">This site can’t be reached</h1>
@@ -91,7 +108,11 @@ export function SensorScreen({ state }: { state: SimState }) {
         <div className="flex items-center gap-6">
           <div className="flex gap-3 text-[10px] tracking-widest text-white/50">
             <Led label="PWR" on colour="bg-leaf shadow-leaf" />
-            <Led label="NET" on={state.wifi} colour={state.wifi ? 'bg-leaf shadow-leaf' : 'bg-[#ff7a59] shadow-[#ff7a59]'} />
+            <Led
+              label="NET"
+              on={state.wifi}
+              colour={state.wifi ? 'bg-leaf shadow-leaf' : 'bg-[#ff7a59] shadow-[#ff7a59]'}
+            />
             {/* Re-mounting with a new key replays the blink each time a reading is sent */}
             <Led key={device.lastSentMs ?? 0} label="TX" on={false} colour="" blink />
           </div>
@@ -279,7 +300,12 @@ function FacadeDiagram({ reading, sending }: { reading: Reading | null; sending:
   ];
 
   return (
-    <svg viewBox="0 0 560 560" className="mt-3 w-full" role="img" aria-label="Sensor positions on the wall">
+    <svg
+      viewBox="0 0 560 560"
+      className="mt-3 w-full"
+      role="img"
+      aria-label="Sensor positions on the wall"
+    >
       <defs>
         <pattern id="brick" width="24" height="14" patternUnits="userSpaceOnUse">
           <rect width="24" height="14" fill="#3b2a22" />
@@ -294,10 +320,10 @@ function FacadeDiagram({ reading, sending }: { reading: Reading | null; sending:
       {/* Sun + rays (only by day) */}
       {sunUp && (
         <g>
-          <circle cx="500" cy="50" r="26" fill="#f5b82e" opacity="0.9" />
-          <circle cx="500" cy="50" r="40" fill="#f5b82e" opacity="0.2" />
+          <circle cx="320" cy="44" r="20" fill="#f5b82e" opacity="0.9" />
+          <circle cx="320" cy="44" r="32" fill="#f5b82e" opacity="0.2" />
           {[90, 150, 210].map((y) => (
-            <line key={y} x1="470" y1="70" x2="200" y2={y} stroke="url(#ray)" strokeWidth="3" />
+            <line key={y} x1="302" y1="58" x2="196" y2={y} stroke="url(#ray)" strokeWidth="3" />
           ))}
         </g>
       )}
@@ -307,7 +333,13 @@ function FacadeDiagram({ reading, sending }: { reading: Reading | null; sending:
 
       {/* The wall (brick), seen from the side */}
       <rect x="70" y="30" width="62" height="500" fill="url(#brick)" />
-      <text x="20" y="300" fill="rgb(255 255 255 / 0.4)" fontSize="11" transform="rotate(-90 20 300)">
+      <text
+        x="20"
+        y="300"
+        fill="rgb(255 255 255 / 0.4)"
+        fontSize="11"
+        transform="rotate(-90 20 300)"
+      >
         BUILDING · south wall
       </text>
 
@@ -315,9 +347,26 @@ function FacadeDiagram({ reading, sending }: { reading: Reading | null; sending:
       {[80, 280].map((y) => (
         <line key={y} x1="132" x2="176" y1={y} y2={y} stroke="#9aa3a8" strokeWidth="4" />
       ))}
-      <rect x="176" y="60" width="14" height="250" rx="2" fill="#0e1c22" stroke="#4cc27a" strokeOpacity="0.5" />
+      <rect
+        x="176"
+        y="60"
+        width="14"
+        height="250"
+        rx="2"
+        fill="#0e1c22"
+        stroke="#4cc27a"
+        strokeOpacity="0.5"
+      />
       {Array.from({ length: 9 }, (_, i) => (
-        <line key={i} x1="176" x2="190" y1={60 + i * 28} y2={60 + i * 28} stroke="#c8d7e1" strokeOpacity="0.35" />
+        <line
+          key={i}
+          x1="176"
+          x2="190"
+          y1={60 + i * 28}
+          y2={60 + i * 28}
+          stroke="#c8d7e1"
+          strokeOpacity="0.35"
+        />
       ))}
       <text x="200" y="300" fill="rgb(255 255 255 / 0.4)" fontSize="11">
         SolarSkin module

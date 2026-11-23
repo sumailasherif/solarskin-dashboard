@@ -41,7 +41,15 @@ function modelDay(date: string, weather: Weather): DaySummary {
     peakIrradiance = Math.max(peakIrradiance, c.irradiance);
     maxCooling = Math.max(maxCooling, c.wallReference - c.wallShaded);
   }
-  return { date, weather, energyKwh: wh / 1000, peakPowerW, peakIrradiance, maxCooling, minutes: 1440 };
+  return {
+    date,
+    weather,
+    energyKwh: wh / 1000,
+    peakPowerW,
+    peakIrradiance,
+    maxCooling,
+    minutes: 1440,
+  };
 }
 
 export class SimEngine {
@@ -284,7 +292,11 @@ export class SimEngine {
     for (const kwh of ENERGY_MILESTONES_KWH) {
       if (this.todayWh / 1000 >= kwh && !this.milestones.has(kwh)) {
         this.milestones.add(kwh);
-        this.addEvent('good', `Your wall passed ${kwh} kWh today`, 'Clean electricity from sunlight.');
+        this.addEvent(
+          'good',
+          `Your wall passed ${kwh} kWh today`,
+          'Clean electricity from sunlight.',
+        );
       }
     }
   }

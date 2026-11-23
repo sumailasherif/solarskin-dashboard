@@ -146,9 +146,12 @@ export function conditions(utcMs: number, clearness: number): Conditions {
   const wallShaded = ambient + 0.005 * irradiance + 0.003 * hourAgo + 0.4 * nightCooling;
 
   const tempLoss = 1 - 0.004 * (panel - 25); // modules lose about 0.4 % per °C above 25 °C
-  const powerW = irradiance < 8 ? 0 : SITE.kwp * 1000 * (irradiance / 1000) * tempLoss * SYSTEM_EFFICIENCY;
+  const powerW =
+    irradiance < 8 ? 0 : SITE.kwp * 1000 * (irradiance / 1000) * tempLoss * SYSTEM_EFFICIENCY;
   const voltageV =
-    powerW === 0 ? 0 : 380 * (1 - 0.0035 * (panel - 25)) * (0.9 + 0.1 * Math.min(1, irradiance / 200));
+    powerW === 0
+      ? 0
+      : 380 * (1 - 0.0035 * (panel - 25)) * (0.9 + 0.1 * Math.min(1, irradiance / 200));
   const currentA = voltageV === 0 ? 0 : powerW / voltageV;
 
   return { irradiance, ambient, panel, wallShaded, wallReference, powerW, voltageV, currentA };

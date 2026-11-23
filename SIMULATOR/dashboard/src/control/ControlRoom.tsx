@@ -116,14 +116,15 @@ export function ControlRoom() {
           <div className="text-right">
             <p className="font-display text-4xl tabular-nums">{clockSeconds(state.nowMs)}</p>
             <p className="text-xs text-white/50">
-              {longDate(state.nowMs)} · Fergana (GMT+5) · {state.running ? `${state.speed}×` : 'paused'}
+              {longDate(state.nowMs)} · Fergana (GMT+5) ·{' '}
+              {state.running ? `${state.speed}×` : 'paused'}
             </p>
           </div>
         </div>
       </header>
 
       {/* Controls */}
-      <section className="relative grid gap-4 px-6 py-5 lg:px-10 xl:grid-cols-[auto_auto_auto_minmax(0,1fr)]">
+      <section className="relative flex flex-wrap items-start gap-4 px-6 py-5 lg:px-10">
         <Group title="Time">
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -204,7 +205,16 @@ export function ControlRoom() {
 
       {/* Data flow: what is happening between the screens */}
       <section className="relative flex flex-wrap items-center gap-x-3 gap-y-2 px-6 pb-2 text-xs lg:px-10">
-        <Node on={state.powered} label={state.powered ? (state.device.booting ? 'Kit booting' : 'Kit measuring') : 'Kit: no power'} />
+        <Node
+          on={state.powered}
+          label={
+            state.powered
+              ? state.device.booting
+                ? 'Kit booting'
+                : 'Kit measuring'
+              : 'Kit: no power'
+          }
+        />
         <Link
           ok={state.powered && state.wifi}
           text={
@@ -215,9 +225,15 @@ export function ControlRoom() {
                 : `no Wi-Fi · ${state.device.queue} stored on kit`
           }
         />
-        <Node on={!offline} label={offline ? `Server: offline alert (${silentFor ?? '–'} min)` : 'Server receiving'} />
+        <Node
+          on={!offline}
+          label={offline ? `Server: offline alert (${silentFor ?? '–'} min)` : 'Server receiving'}
+        />
         <Link ok text="reads" />
-        <Node on label={`Website + owner app · today ${num(today.energyKwh, 1)} kWh · ${today.minutes}/${today.expectedMinutes} readings`} />
+        <Node
+          on
+          label={`Website + owner app · today ${num(today.energyKwh, 1)} kWh · ${today.minutes}/${today.expectedMinutes} readings`}
+        />
 
         <div className="ml-auto flex gap-1 rounded-full bg-white/10 p-1 ring-1 ring-white/15">
           {(
@@ -255,7 +271,7 @@ export function ControlRoom() {
               ? s.id === 'website'
                 ? 'lg:order-first lg:col-span-2 lg:mx-auto lg:w-4/5 2xl:order-none 2xl:col-span-1 2xl:w-full'
                 : ''
-              : 'mx-auto max-w-[1280px]';
+              : 'mx-auto max-w-[1180px]';
           return (
             <div key={s.id} className={`${visible ? '' : 'hidden'} ${layout}`}>
               <MacBook
