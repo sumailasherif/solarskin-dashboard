@@ -16,9 +16,9 @@ export function SiteFooter({ email = CONTACT_EMAIL }: { email?: string }) {
   const { t } = useTranslation();
 
   return (
-    <footer id="contact" className="bg-forest-950 px-4 pt-20 pb-8 text-white sm:px-8">
+    <footer id="contact" className="bg-forest-950 px-4 pt-16 pb-8 text-white sm:px-8">
       {/* 1. Quick links + contact form */}
-      <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
         <nav aria-labelledby="quick-links">
           <h2 id="quick-links" className="font-serif text-2xl text-solar italic">
             {t('site.quickLinks')}
@@ -46,7 +46,7 @@ export function SiteFooter({ email = CONTACT_EMAIL }: { email?: string }) {
       </div>
 
       {/* 2. Brand: big centred logo + tagline, with a soft sun glow behind it */}
-      <div className="relative mx-auto mt-24 max-w-7xl overflow-hidden py-16 text-center">
+      <div className="relative mx-auto mt-12 max-w-7xl overflow-hidden py-10 text-center">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-40 max-w-xl -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(245,184,46,0.16),transparent)]"

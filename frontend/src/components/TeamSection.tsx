@@ -134,7 +134,6 @@ export function TeamSection() {
           <h2 className="font-serif text-[clamp(2.4rem,6vw,4.5rem)] leading-none italic">
             {t('team.title')}
           </h2>
-          <p className="mt-5 text-lg text-forest-950/70">{t('team.intro')}</p>
         </Reveal>
 
         {/* Phones: 2 columns (last one centred) · tablets/laptops: 3 (middle one lower) · wide screens: all 5 (every 2nd lower) */}

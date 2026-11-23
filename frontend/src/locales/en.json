@@ -219,19 +219,16 @@
       "uzLandscape": "Bostanlik District, Uzbekistan",
       "panelCloseUp": "Solar panel close-up",
       "sensorKit": "Electronic components",
-      "residentPhone": "Man with a smartphone, Chongqing",
       "almatyBlocks": "Apartment blocks, Almaty"
     }
   },
   "team": {
-    "title": "Meet The Team",
-    "intro": "Five members in four countries, covering solar engineering, electronics, data, cost and storytelling."
+    "title": "Meet The Team"
   },
   "faq": {
     "kicker": "FAQ",
     "title": "Questions, answered",
     "lead": "Everything you need to know about SolarSkin, in plain language.",
-    "photoCaption": "Residents will be able to check their wall's output on their phone.",
     "items": [
       {
         "q": "What is SolarSkin?",
@@ -257,17 +254,7 @@
         "q": "Is the pilot installed yet?",
         "a": "Not yet. The first SolarSkin wall will be installed and measured in Fergana. Until then, every figure on this page is labelled as a planning estimate."
       }
-    ],
-    "popups": {
-      "app": "SolarSkin",
-      "now": "now",
-      "bannerTitle": "Your wall made ≈ 22 kWh today",
-      "bannerText": "South wall · Fergana pilot",
-      "co2Title": "Less CO₂",
-      "co2Value": "≈ 12 kg today",
-      "shadeTitle": "Shaded wall",
-      "shadeValue": "cooler in summer"
-    }
+    ]
   },
   "cooling": {
     "title": "Same sun, cooler wall.",

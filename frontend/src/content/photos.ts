@@ -51,12 +51,6 @@ export const PHOTOS = {
     photographer: 'Robin Glauser',
     page: 'https://unsplash.com/photos/zP7X_B86xOg',
   },
-  residentPhone: {
-    id: 'photo-1763994679849-de757e723af8',
-    alt: 'A smiling young man with glasses and a backpack holding his smartphone on a busy city street',
-    photographer: 'Fenghua',
-    page: 'https://unsplash.com/photos/pP0lLmWMy-Q',
-  },
   // Central Asian apartment blocks: the walls SolarSkin is made for
   almatyBlocks: {
     id: 'photo-1770053472486-d766458a2dd0',
