@@ -1,7 +1,7 @@
 // "Team": the five people behind SolarSkin, in four countries.
 // Each person gets a tall arch-shaped photo (like a sun rising over a wall), their name
-// in Fraunces Italic, their programme and university, their position on a tag in their
-// own colour. Hovering or tapping the position tag slides down their full role. The cards are staggered up and down.
+// in Fraunces Italic, their programme and university, and their position on a yellow tag.
+// Hovering or tapping the tag slides down their full role. The cards are staggered.
 // The list of people lives in content/team.ts.
 import { useId, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -17,12 +17,10 @@ const ARCH = 'rounded-t-[50%_37.5%] rounded-b-[2rem]';
  * (hover/tap the tag to slide down their full role).
  */
 function MemberCard({ member }: { member: TeamMember }) {
-  // Their colour, used by the classes below as var(--accent)
-  const accent = { '--accent': member.color } as CSSProperties;
   const detailsId = useId();
 
   return (
-    <article style={accent} className="group text-center">
+    <article className="group text-center">
       <div className="relative transition-transform duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:-translate-y-2">
         {/* Green glow behind the photo on hover */}
         <div
@@ -52,13 +50,13 @@ function MemberCard({ member }: { member: TeamMember }) {
                   }
                 />
               ) : (
-                // No photo yet: their initials, big, in their colour
+                // No photo yet: their initials, big, in solar yellow
                 <div
                   role="img"
                   aria-label={member.name}
                   className="grid h-full w-full place-items-center bg-gradient-to-b from-forest-700 to-forest-950"
                 >
-                  <span className="font-serif text-6xl text-(--accent) italic">
+                  <span className="font-serif text-6xl text-solar italic">
                     {initials(member.name)}
                   </span>
                 </div>
@@ -73,7 +71,7 @@ function MemberCard({ member }: { member: TeamMember }) {
         {member.credential}
       </p>
 
-      {/* Thin line, then their position on a solid tag in their colour */}
+      {/* Thin line, then their position on a solar-yellow tag */}
       <span aria-hidden className="mx-auto mt-3 block h-px w-12 bg-forest-950/15" />
 
       {/* Hover the tag (or tap / Tab to it) and the full role slides down below it */}
@@ -81,7 +79,7 @@ function MemberCard({ member }: { member: TeamMember }) {
         <button
           type="button"
           aria-describedby={detailsId}
-          className="inline-flex cursor-help items-center gap-1.5 rounded-md bg-(--accent) px-3 py-1 text-xs font-semibold text-forest-950 focus-visible:ring-2 focus-visible:ring-(--accent) focus-visible:ring-offset-2 focus-visible:outline-none"
+          className="inline-flex cursor-help items-center gap-1.5 rounded-md bg-solar px-3 py-1 text-xs font-semibold text-forest-950 focus-visible:ring-2 focus-visible:ring-solar focus-visible:ring-offset-2 focus-visible:outline-none"
         >
           {member.title}
           {/* Small arrow that flips when the details are open */}
@@ -104,7 +102,7 @@ function MemberCard({ member }: { member: TeamMember }) {
           <div className="overflow-hidden">
             <p
               id={detailsId}
-              className="mx-auto mt-3 max-w-[17rem] -translate-y-2 rounded-2xl border-t-4 border-(--accent) bg-forest-950 px-4 py-3 text-left text-sm leading-relaxed text-white/85 opacity-0 transition duration-500 group-focus-within/role:translate-y-0 group-focus-within/role:opacity-100 group-hover/role:translate-y-0 group-hover/role:opacity-100"
+              className="mx-auto mt-3 max-w-[17rem] -translate-y-2 rounded-2xl border-t-4 border-solar bg-forest-950 px-4 py-3 text-left text-sm leading-relaxed text-white/85 opacity-0 transition duration-500 group-focus-within/role:translate-y-0 group-focus-within/role:opacity-100 group-hover/role:translate-y-0 group-hover/role:opacity-100"
             >
               {member.details}
             </p>
