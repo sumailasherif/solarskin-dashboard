@@ -36,7 +36,7 @@ export const TEAM: TeamMember[] = [
     title: 'Frontend & Impact Lead',
     credential: 'BSc (Hons) Computer Science · African Leadership College of Higher Education',
     details:
-      "Designed and built this website and the live monitoring dashboard for the sensor data. Works out the emission factors and energy statistics behind SolarSkin's CO₂ and sustainability impact.",
+      "Designed and builds the front-end website and the live monitoring dashboard. Does the impact research: the emission factors and energy statistics behind SolarSkin's CO₂ savings.",
     color: '#4cc27a', // leaf green
     photo: '/team/sherif.jpg',
     focus: '50% 35%',

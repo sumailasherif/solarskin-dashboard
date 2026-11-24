@@ -13,7 +13,7 @@ import { Reveal } from './Reveal';
 const ARCH = 'rounded-t-[50%_37.5%] rounded-b-[2rem]';
 
 /**
- * One person: arch photo (ringed in their colour) + name + credential + position tag
+ * One person: arch photo (green ring) + name + credential + position tag
  * (hover/tap the tag to slide down their full role).
  */
 function MemberCard({ member }: { member: TeamMember }) {
@@ -24,14 +24,14 @@ function MemberCard({ member }: { member: TeamMember }) {
   return (
     <article style={accent} className="group text-center">
       <div className="relative transition-transform duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:-translate-y-2">
-        {/* Glow in their colour behind the photo on hover */}
+        {/* Green glow behind the photo on hover */}
         <div
           aria-hidden
-          className={`absolute -inset-3 ${ARCH} bg-(--accent) opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60`}
+          className={`absolute -inset-3 ${ARCH} bg-leaf opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-60`}
         />
 
-        {/* Coloured ring: a thin white gap, then their colour */}
-        <div className={`relative ${ARCH} bg-(--accent) p-[3px]`}>
+        {/* Green ring around every photo: a thin white gap, then leaf green */}
+        <div className={`relative ${ARCH} bg-leaf p-[3px]`}>
           <div className={`relative ${ARCH} bg-white p-[3px]`}>
             <div className={`relative aspect-[3/4] overflow-hidden ${ARCH}`}>
               {member.photo ? (
