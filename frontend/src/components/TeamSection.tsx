@@ -102,7 +102,7 @@ function MemberCard({ member }: { member: TeamMember }) {
           <div className="overflow-hidden">
             <p
               id={detailsId}
-              className="mx-auto mt-3 max-w-[17rem] -translate-y-2 rounded-2xl border-t-4 border-solar bg-forest-950 px-4 py-3 text-left text-sm leading-relaxed text-white/85 opacity-0 transition duration-500 group-focus-within/role:translate-y-0 group-focus-within/role:opacity-100 group-hover/role:translate-y-0 group-hover/role:opacity-100"
+              className="mx-auto mt-3 max-w-[17rem] -translate-y-2 rounded-2xl border-t-4 border-solar bg-forest-950 px-4 py-3 text-left text-xs leading-relaxed text-white/85 opacity-0 transition duration-500 group-focus-within/role:translate-y-0 group-focus-within/role:opacity-100 group-hover/role:translate-y-0 group-hover/role:opacity-100"
             >
               {member.details}
             </p>
